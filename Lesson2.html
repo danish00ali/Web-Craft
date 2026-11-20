@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Learning HTML</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+        
+<nav class="navbar">
+    <div class="nav-logo">HTML Course</div>
+
+    <button class="menu-toggle"
+            onclick="toggleMenu()"
+            aria-label="Open navigation menu"
+            aria-expanded="false">
+        ☰
+    </button>
+
+    <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="Lesson1.html">Lesson 1</a>
+        <a href="Lesson2.html" class="active">Lesson 2</a>
+        <a href="Lesson3.html">Lesson 3</a>
+        <a href="Lesson4.html">Lesson 4</a>
+        <a href="Lesson5.html">Lesson 5</a>
+        <a href="Lesson6.html">Lesson 6</a>
+        <a href="Lesson7.html">Lesson 7</a>
+        <a href="Lesson8.html">Lesson 8</a>
+        <a href="Lesson9.html">Lesson 9</a>
+        <a href="Lesson10.html">Lesson 10</a>
+    </div>
+</nav>
+
+<script>
+function toggleMenu() {
+    const menu = document.getElementById("navLinks");
+    const button = document.querySelector(".menu-toggle");
+
+    menu.classList.toggle("show");
+
+    button.setAttribute(
+        "aria-expanded",
+        menu.classList.contains("show")
+    );
+}
+</script>
+
+    <h3>Commonly Used HTML Tags</h3>
+    <p>There are a lot of predefined tags in HTML but the most commonly used tags are given below:</p>
+    <ol>
+        <li>&lt;html&gt; tag:</li>
+        <p>Every html document starts with this tag, so it is called the root tag. For example:</p>
+        <div style="display: flex; justify-content: center;">
+            <img src="Image 2.png" alt="Image 2">
+        </div>
+        <p>We can see that the whole document is enclosed with &quot;html&quot; tags as:
+        <div style="display: flex; justify-content: center;">
+            <img src="Image 3.png"
+                alt="HTML code snippet on a dark editor-like background showing &lt;html&gt; Statements... &lt;/html&gt;, with the tags highlighted in pink and the text in light blue. The presentation is instructional and neutral;">
+        </div>
+        </p>
+        <li>&lt;head&gt; tag:</li>
+        <p>&quot;Head&quot; tag is used to contain all the head element in the html file.
+            It is written in the &lt;html&gt; tag and before &lt;body&gt; tag.
+            &lt;head&gt; It has elements that describes the web page &lt;/head&gt;For example:
+        <div style="display: flex; justify-content: center;">
+            <img src="Head.png" alt="Image 4">
+        </div>
+        </p>
+        <li>&lt;body&gt; tag:</li>
+        <p>It is used to define the body of html document. It contains image, tables,lists, ... etc. For example:
+        <div style="display: flex; justify-content: center;">
+            <img src="Image 4.png" alt="Image 4">
+        </div>
+        </p>
+        <li>&lt;title&gt; tag:</li>
+        <p>It is used to define the title of the HTML document. It is placed inside the &lt;head&gt; tag. For example:
+        </p>
+        <div style="display: flex; justify-content: center;">
+            <img src="Image 5.png" alt="Image 5">
+        </div>
+        <li>&lt;h1&gt; to &lt;h6&gt; tags:</li>
+        <p> This tag is used to define the heading in an HTML document. There are a total of six heading levels, from
+            &lt;h1&gt; (the most important) to &lt;h6&gt; (the least important).</p>
+        <div style="display: flex; justify-content: center;">
+            <img src="Image 6.png" alt="Image 6">
+        </div>
+        <li>&lt;p&gt; tag:</li>
+        <p>This tag is used to define a paragraph in an HTML document. It is used to group together related sentences
+            and provide structure to the content. For example:</p>
+        <div style="display: flex; justify-content: center;">
+            <img src="Image 7.png" alt="Image 7">
+        </div>
+        </div>
+        <li>&lt;b&gt; tag:</li>
+        <p>This tag is used to define bold text in an HTML document. For example:</p>
+        <div style="display: flex; justify-content: center;">
+            <img src="Image 8.png" alt="Image 8">
+        </div>
+        <li>&lt;a&gt; tag:</li>
+        <p>This tag is used to create hyperlinks in an HTML document. It allows users to navigate to other web pages or
+            resources by clicking on the link. For example:</p>
+        <div style="display: flex; justify-content: center;">
+            <img src="Image 11.png" alt="Image 11">
+        </div>
+        <li>&lt;i&gt; tag:</li>
+        <p>This tag is used to define italic text in an HTML document. For example:</p>
+        <div style="display: flex; justify-content: center;">
+            <img src="Image 9.png" alt="Image 9">
+        </div>
+        <li>&lt;u&gt; tag:</li>
+        <p>This tag is used to define underlined text in an HTML document. For example:</p>
+        <div style="display: flex; justify-content: center;">
+            <img src="Image 10.png" alt="Image 10">
+        </div>
+        <li>&lt;li&gt; tag:</li>
+        <p>This tag is used to define a list item in an HTML document. It is used within the &lt;ul&gt; (unordered list)
+            or &lt;ol&gt; (ordered list) tags. For example:</p>
+        <div style="display: flex; justify-content: center;">
+            <img src="Image 12.png" alt="Image 12">
+        </div>
+        <li>&lt;ol&gt; tag:</li>
+        <p>This tag is used to define an ordered list in an HTML document. It is used to create a list where the items
+            are numbered. For example:</p>
+        <div style="display: flex; justify-content: center;">
+            <img src="Image 13.png" alt="Image 13">
+        </div>
+        <p>It looks like this:</p>
+        <div style="display: flex; justify-content: center;">
+            <img src="Image 14.png" alt="Image 14">
+        </div>
+        <li>&lt;ul&gt; tag:</li>
+        <p>This tag is used to define an unordered list in an HTML document. It is used to create a list where the items
+            are marked with bullets. For example:</p>
+        <div style="display: flex; justify-content: center;">
+            <img src="Image 15.png" alt="Image 15">
+        </div>
+        <p>It looks like this:</p>
+        <div style="display: flex; justify-content: center;">
+            <img src="Image 16.png" alt="Image 16">
+        </div>
+        <li>&lt;!-- comment --&gt; tag:</li>
+        <p>This tag is used to add comments in an HTML document. Comments are not displayed in the browser but are
+            useful for adding notes or explanations. For example:</p>
+        <div style="display: flex; justify-content: center;">
+            <img src="Image 17.png" alt="Image 17">
+        </div>
+        <li>&lt;center&gt; tag:</li>
+        <p>This tag is used to center-align text or elements in an HTML document. For example:</p>
+        <div style="display: flex; justify-content: center;">
+            <img src="Image 18.png" alt="Image 18">
+        </div>
+        <li>&lt;font&gt; tag:</li>
+        <p>This tag is used to specify the font, size, and color of text in an HTML document. For example:</p>
+        <div style="display: flex; justify-content: center;">
+            <img src="Image 19.png" alt="Image 19">
+        </div>
+        <li>&lt;img&gt; tag:</li>
+        <p>This tag is used to embed an image in an HTML document. For example:</p>
+        <div style="display: flex; justify-content: center;">
+            <img src="Image 20.png" alt="Image 20">
+        </div>
+        <li>&lt;table&gt; tag:</li>
+        <p>This tag is used to create tables in an HTML document. For example:</p>
+        <div style="display: flex; justify-content: center;">
+            <img src="Image 21.png" alt="Image 21">
+        </div>
+    </ol>
+    <div class="lesson-navigation">
+
+        <a href="Lesson1.html">
+            ← Previous Lesson
+        </a>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="Lesson3.html">
+            Next Lesson →
+        </a>
+
+    </div>
+</body>
+
+</html>

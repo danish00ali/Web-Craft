@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 3 - HTML Attributes</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .lesson-content {
+            max-width: 1050px;
+            margin: 25px auto;
+        }
+
+        .lesson-card {
+            background: white;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+            border-left: 5px solid #2563eb;
+        }
+
+        .lesson-card h2 {
+            color: #1d4ed8;
+            border: none;
+            padding: 0;
+            margin-top: 0;
+        }
+
+        .lesson-card p {
+            margin: 12px 0;
+        }
+
+        .lesson-card pre {
+            background: #0f172a;
+            color: #38bdf8;
+            padding: 20px;
+            border-radius: 10px;
+            overflow-x: auto;
+            font-size: 15px;
+        }
+
+        .lesson-card code {
+            color: #38bdf8;
+            background: transparent;
+        }
+
+        .example-output {
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            padding: 18px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        .quiz-option {
+            display: block;
+            width: 100%;
+            text-align: left;
+            background: #eff6ff;
+            border: 2px solid #bfdbfe;
+            color: #1e3a8a;
+            padding: 13px;
+            margin: 10px 0;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .quiz-option:hover {
+            background: #dbeafe;
+        }
+
+        .quiz-option:disabled {
+            cursor: default;
+            opacity: 0.85;
+        }
+
+        #quiz-result {
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .lesson-navigation {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            margin: 35px 0;
+            flex-wrap: wrap;
+        }
+
+        .lesson-navigation a {
+            display: inline-block;
+            background: #2563eb;
+            color: white !important;
+            padding: 13px 22px;
+            border-radius: 9px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .lesson-navigation a:hover {
+            background: #172554;
+        }
+
+        @media(max-width: 600px) {
+            .lesson-card {
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION BAR -->
+
+        
+<nav class="navbar">
+    <div class="nav-logo">HTML Course</div>
+
+    <button class="menu-toggle"
+            onclick="toggleMenu()"
+            aria-label="Open navigation menu"
+            aria-expanded="false">
+        ☰
+    </button>
+
+    <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="Lesson1.html">Lesson 1</a>
+        <a href="Lesson2.html">Lesson 2</a>
+        <a href="Lesson3.html" class="active">Lesson 3</a>
+        <a href="Lesson4.html">Lesson 4</a>
+        <a href="Lesson5.html">Lesson 5</a>
+        <a href="Lesson6.html">Lesson 6</a>
+        <a href="Lesson7.html">Lesson 7</a>
+        <a href="Lesson8.html">Lesson 8</a>
+        <a href="Lesson9.html">Lesson 9</a>
+        <a href="Lesson10.html">Lesson 10</a>
+    </div>
+</nav>
+
+<script>
+function toggleMenu() {
+    const menu = document.getElementById("navLinks");
+    const button = document.querySelector(".menu-toggle");
+
+    menu.classList.toggle("show");
+
+    button.setAttribute(
+        "aria-expanded",
+        menu.classList.contains("show")
+    );
+}
+</script>
+
+
+
+    <main class="lesson-content">
+
+        <h1>Lesson 3: HTML Attributes</h1>
+
+        <p style="text-align:center;">
+            Learn how HTML attributes work and how to use them
+            in your websites.
+        </p>
+
+
+        <!-- SECTION 1 -->
+
+        <section class="lesson-card">
+
+            <h2>1. What are HTML Attributes?</h2>
+
+            <p>
+                HTML attributes provide additional information
+                about HTML elements.
+            </p>
+
+            <p>
+                Attributes are always written in the opening tag.
+                They usually come in name and value pairs.
+            </p>
+
+            <pre><code>&lt;tagname attribute="value"&gt;
+<Content>
+&lt;/tagname&gt;</code></pre>
+
+            <div class="example-output">
+                <strong>Example:</strong>
+
+                <pre><code>&lt;a href="https://www.google.com"&gt;
+Visit Google
+&lt;/a&gt;</code></pre>
+
+                The href attribute tells the browser
+                where the link should go.
+            </div>
+
+        </section>
+
+
+        <!-- SECTION 2 -->
+
+        <section class="lesson-card">
+
+            <h2>2. The href Attribute</h2>
+
+            <p>
+                The href attribute is used with the
+                &lt;a&gt; tag to create hyperlinks.
+            </p>
+
+            <pre><code>&lt;a href="https://www.google.com"&gt;
+Visit Google
+&lt;/a&gt;</code></pre>
+
+            <div class="example-output">
+                <strong>Output:</strong>
+                <p>
+                    <a href="https://www.google.com" target="_blank">
+                        Visit Google
+                    </a>
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- SECTION 3 -->
+
+        <section class="lesson-card">
+
+            <h2>3. The src Attribute</h2>
+
+            <p>
+                The src attribute specifies the location
+                of an image or other embedded resource.
+            </p>
+
+            <pre><code>&lt;img src="photo.jpg" alt="My Photo"&gt;</code></pre>
+
+            <p>
+                Here, src tells the browser which image
+                it should display.
+            </p>
+
+        </section>
+
+
+        <!-- SECTION 4 -->
+
+        <section class="lesson-card">
+
+            <h2>4. The alt Attribute</h2>
+
+            <p>
+                The alt attribute provides alternative text
+                for an image.
+            </p>
+
+            <pre><code>&lt;img src="cat.jpg" alt="A cute cat"&gt;</code></pre>
+
+            <p>
+                If the image cannot load, the alternative
+                text can help explain what the image represents.
+            </p>
+
+        </section>
+
+
+        <!-- SECTION 5 -->
+
+        <section class="lesson-card">
+
+            <h2>5. Width and Height Attributes</h2>
+
+            <p>
+                Width and height specify the dimensions
+                of an image.
+            </p>
+
+            <pre><code>&lt;img src="photo.jpg"
+     alt="My Photo"
+     width="300"
+     height="200"&gt;</code></pre>
+
+            <p>
+                Width controls the width, while height
+                controls the height.
+            </p>
+
+        </section>
+
+
+        <!-- SECTION 6 -->
+
+        <section class="lesson-card">
+
+            <h2>6. The title Attribute</h2>
+
+            <p>
+                The title attribute provides extra information
+                about an element. Browsers commonly show it
+                as a tooltip when the user hovers over it.
+            </p>
+
+            <pre><code>&lt;p title="This is extra information"&gt;
+Move your mouse over this text.
+&lt;/p&gt;</code></pre>
+
+            <div class="example-output">
+                <p title="This is extra information">
+                    Move your mouse over this text.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- SECTION 7 -->
+
+        <section class="lesson-card">
+
+            <h2>7. The style Attribute</h2>
+
+            <p>
+                The style attribute is used to add CSS
+                directly to an HTML element.
+            </p>
+
+            <pre><code>&lt;p style="color: blue;"&gt;
+This is blue text.
+&lt;/p&gt;</code></pre>
+
+            <div class="example-output">
+                <p style="color:blue;">
+                    This is blue text.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- SECTION 8 -->
+
+        <section class="lesson-card">
+
+            <h2>8. The id Attribute</h2>
+
+            <p>
+                The id attribute gives a unique identifier
+                to an HTML element.
+            </p>
+
+            <pre><code>&lt;h2 id="heading"&gt;
+My Heading
+&lt;/h2&gt;</code></pre>
+
+            <p>
+                An id can be used in CSS and JavaScript
+                to select a particular element.
+            </p>
+
+        </section>
+
+
+        <!-- SECTION 9 -->
+
+        <section class="lesson-card">
+
+            <h2>9. The class Attribute</h2>
+
+            <p>
+                The class attribute is used to assign
+                one or more class names to HTML elements.
+            </p>
+
+            <pre><code>&lt;p class="important"&gt;
+This is an important paragraph.
+&lt;/p&gt;</code></pre>
+
+            <p>
+                Multiple elements can share the same class.
+            </p>
+
+        </section>
+
+
+        <!-- SECTION 10 -->
+
+        <section class="lesson-card">
+
+            <h2>10. The required Attribute</h2>
+
+            <p>
+                The required attribute makes a form field
+                necessary before the form can be submitted.
+            </p>
+
+            <pre><code>&lt;input type="text" required&gt;</code></pre>
+
+            <p>
+                The user must enter a value in this field
+                before submitting the form.
+            </p>
+
+        </section>
+
+
+        <!-- SECTION 11 -->
+
+        <section class="lesson-card">
+
+            <h2>11. Important Rules of HTML Attributes</h2>
+
+            <ul>
+                <li>Attributes are written in opening tags.</li>
+                <li>Attributes usually have a name and a value.</li>
+                <li>Attribute values should be placed inside quotation marks.</li>
+                <li>An element can have multiple attributes.</li>
+                <li>Some attributes, such as required, are Boolean attributes.</li>
+            </ul>
+
+            <pre><code>&lt;img src="photo.jpg"
+     alt="A photo"
+     width="300"
+     height="200"&gt;</code></pre>
+
+        </section>
+
+
+        <!-- PRACTICE -->
+
+        <section class="lesson-card">
+
+            <h2>12. Practice Exercise</h2>
+
+            <p>
+                Try writing the following HTML code in
+                your VS Code editor:
+            </p>
+
+            <pre><code>&lt;h1 style="color: blue;"&gt;
+Welcome to My Website
+&lt;/h1&gt;
+
+&lt;a href="https://www.google.com"&gt;
+Visit Google
+&lt;/a&gt;
+
+&lt;img src="photo.jpg"
+     alt="My Image"
+     width="200"&gt;</code></pre>
+
+            <p>
+                Try changing the color, link, and image width.
+                This will help you understand attributes better.
+            </p>
+
+        </section>
+
+
+        <!-- QUIZ -->
+
+        <section class="lesson-card">
+
+            <h2>13. Test Your Knowledge</h2>
+
+            <p><strong>Question 1:</strong>
+                What are HTML attributes used for?
+            </p>
+
+            <button class="quiz-option" onclick="checkAnswer(this, false)">
+                A. To delete HTML elements
+            </button>
+
+            <button class="quiz-option" onclick="checkAnswer(this, true)">
+                B. To provide additional information
+            </button>
+
+            <button class="quiz-option" onclick="checkAnswer(this, false)">
+                C. To close the browser
+            </button>
+
+            <p id="quiz-result"></p>
+
+            <button onclick="resetQuiz()" style="background:#172554;color:white;
+                padding:12px 20px;border:0;border-radius:8px;
+                cursor:pointer;">
+                Try Again
+            </button>
+
+        </section>
+
+
+        <!-- LESSON NAVIGATION -->
+
+        <div class="lesson-navigation">
+
+            <a href="Lesson2.html">
+                ← Previous Lesson
+            </a>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="Lesson4.html">
+                Next Lesson →
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <!-- JAVASCRIPT QUIZ -->
+
+    <script>
+
+        function checkAnswer(button, correct) {
+
+            let result = document.getElementById("quiz-result");
+
+            let options = document.querySelectorAll(".quiz-option");
+
+            options.forEach(function (option) {
+                option.disabled = true;
+            });
+
+            if (correct) {
+
+                result.innerHTML = "Correct! Excellent work!";
+
+                result.style.color = "green";
+
+                button.style.background = "#dcfce7";
+
+            } else {
+
+                result.innerHTML = "Incorrect! Try again after reviewing the lesson.";
+
+                result.style.color = "red";
+
+                button.style.background = "#fee2e2";
+
+            }
+
+        }
+
+
+        function resetQuiz() {
+
+            let options = document.querySelectorAll(".quiz-option");
+
+            options.forEach(function (option) {
+
+                option.disabled = false;
+
+                option.style.background = "#eff6ff";
+
+            });
+
+            document.getElementById("quiz-result").innerHTML = "";
+
+        }
+
+    </script>
+
+</body>
+
+</html>

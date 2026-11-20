@@ -1,0 +1,528 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 6: HTML Links</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .lesson-content {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .lesson-content h1 {
+            color: #1e3a8a;
+            text-align: center;
+            font-size: 36px;
+        }
+
+        .lesson-content h2 {
+            color: #2563eb;
+            border-bottom: 2px solid #dbeafe;
+            padding-bottom: 10px;
+            margin-top: 35px;
+        }
+
+        .lesson-content p,
+        .lesson-content li {
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .code-example {
+            background: #0f172a;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 10px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+
+        .note {
+            background: #eff6ff;
+            border-left: 5px solid #2563eb;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .example-link {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 7px;
+            text-decoration: none;
+            margin: 10px 0;
+        }
+
+        .example-link:hover {
+            background: #1d4ed8;
+        }
+
+        .quiz-box {
+            background: #f1f5f9;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 25px;
+        }
+
+        .quiz-box label {
+            display: inline-block;
+            margin: 6px 0;
+        }
+
+        .quiz-box button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .quiz-box button:hover {
+            background: #1d4ed8;
+        }
+
+        .lesson-navigation {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            margin-top: 35px;
+        }
+
+        .lesson-navigation a {
+            background: #2563eb;
+            color: white;
+            padding: 12px 22px;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+
+        .lesson-navigation a:hover {
+            background: #1d4ed8;
+        }
+
+        @media(max-width: 600px) {
+            .lesson-content {
+                margin: 15px;
+                padding: 18px;
+            }
+
+            .lesson-content h1 {
+                font-size: 27px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar">
+        <div class="nav-logo">HTML Course</div>
+
+        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Open navigation menu" aria-expanded="false">
+            ☰
+        </button>
+
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="Lesson1.html">Lesson 1</a>
+            <a href="Lesson2.html">Lesson 2</a>
+            <a href="Lesson3.html">Lesson 3</a>
+            <a href="Lesson4.html">Lesson 4</a>
+            <a href="Lesson5.html">Lesson 5</a>
+            <a href="Lesson6.html" class="active">Lesson 6</a>
+            <a href="Lesson7.html">Lesson 7</a>
+            <a href="Lesson8.html">Lesson 8</a>
+            <a href="Lesson9.html">Lesson 9</a>
+            <a href="Lesson10.html">Lesson 10</a>
+        </div>
+    </nav>
+
+<div class="lesson-content">
+
+    <h1>Lesson 6: HTML Links</h1>
+
+    <p>
+        Welcome to Lesson 6! In this lesson, we will learn
+        about HTML Links. Links are used to connect one
+        webpage to another webpage or website.
+    </p>
+
+    <!-- Section 1 -->
+    <h2>1. What are HTML Links?</h2>
+
+    <p>
+        HTML Links are clickable elements that allow users
+        to move from one webpage to another webpage.
+        They are also called Hyperlinks.
+    </p>
+
+    <p>
+        Links make websites easier to navigate and help
+        users find more information.
+    </p>
+
+    <!-- Section 2 -->
+    <h2>2. The HTML Anchor Tag</h2>
+
+    <p>
+        HTML uses the &lt;a&gt; tag to create hyperlinks.
+        The href attribute specifies the destination of the link.
+    </p>
+
+    <div class="code-example">
+<pre>
+&lt;a href="https://www.google.com"&gt;
+    Visit Google
+&lt;/a&gt;
+</pre>
+    </div>
+
+    <p><strong>Example Output:</strong></p>
+
+    <a class="example-link"
+       href="https://www.google.com"
+       target="_blank"
+       rel="noopener noreferrer">
+        Visit Google
+    </a>
+
+    <!-- Section 3 -->
+    <h2>3. Understanding the href Attribute</h2>
+
+    <p>
+        The href attribute tells the browser where the link
+        should go when someone clicks it.
+    </p>
+
+    <div class="code-example">
+<pre>
+&lt;a href="https://www.youtube.com"&gt;
+    Open YouTube
+&lt;/a&gt;
+</pre>
+    </div>
+
+    <div class="note">
+        <strong>Remember:</strong>
+        Without the href attribute, an anchor element
+        does not work as a normal navigation link.
+    </div>
+
+    <!-- Section 4 -->
+    <h2>4. External Links</h2>
+
+    <p>
+        External Links connect your webpage to another
+        website on the internet.
+    </p>
+
+    <div class="code-example">
+<pre>
+&lt;a href="https://www.wikipedia.org"&gt;
+    Visit Wikipedia
+&lt;/a&gt;
+</pre>
+    </div>
+
+    <p><strong>Example Output:</strong></p>
+
+    <a class="example-link"
+       href="https://www.wikipedia.org"
+       target="_blank"
+       rel="noopener noreferrer">
+        Visit Wikipedia
+    </a>
+
+    <!-- Section 5 -->
+    <h2>5. Internal Links</h2>
+
+    <p>
+        Internal Links connect different pages of the
+        same website.
+    </p>
+
+    <div class="code-example">
+<pre>
+&lt;a href="Lesson1.html"&gt;
+    Go to Lesson 1
+&lt;/a&gt;
+
+&lt;a href="Lesson5.html"&gt;
+    Go to Lesson 5
+&lt;/a&gt;
+</pre>
+    </div>
+
+    <p><strong>Example Output:</strong></p>
+
+    <a class="example-link" href="Lesson1.html">
+        Visit Lesson 1
+    </a>
+
+    <a class="example-link" href="Lesson5.html">
+        Visit Lesson 5
+    </a>
+
+    <!-- Section 6 -->
+    <h2>6. Open Links in a New Tab</h2>
+
+    <p>
+        The target="_blank" attribute opens a link
+        in a new browser tab.
+    </p>
+
+    <div class="code-example">
+<pre>
+&lt;a href="https://www.google.com"
+   target="_blank"
+   rel="noopener noreferrer"&gt;
+    Open Google in New Tab
+&lt;/a&gt;
+</pre>
+    </div>
+
+    <p><strong>Example Output:</strong></p>
+
+    <a class="example-link"
+       href="https://www.google.com"
+       target="_blank"
+       rel="noopener noreferrer">
+        Open Google in New Tab
+    </a>
+
+    <div class="note">
+        <strong>Remember:</strong>
+        target="_blank" opens the destination in a new tab.
+        The rel attribute provides additional security.
+    </div>
+
+    <!-- Section 7 -->
+    <h2>7. Email Links</h2>
+
+    <p>
+        HTML can also create links that open the user's
+        email application.
+    </p>
+
+    <div class="code-example">
+<pre>
+&lt;a href="mailto:example@gmail.com"&gt;
+    Send Email
+&lt;/a&gt;
+</pre>
+    </div>
+
+    <p><strong>Example Output:</strong></p>
+
+    <a class="example-link"
+       href="mailto:example@gmail.com">
+        Send Email
+    </a>
+
+    <!-- Section 8 -->
+    <h2>8. Link to a Specific Section</h2>
+
+    <p>
+        We can use an element's id to create a link
+        that jumps to a specific section of the same page.
+    </p>
+
+    <div class="code-example">
+<pre>
+&lt;a href="#about"&gt;
+    Go to About Section
+&lt;/a&gt;
+
+&lt;h2 id="about"&gt;About Us&lt;/h2&gt;
+&lt;p&gt;Welcome to our website.&lt;/p&gt;
+</pre>
+    </div>
+
+    <p><strong>Example Output:</strong></p>
+
+    <a class="example-link" href="#about">
+        Go to About Section
+    </a>
+    <section id="about" class="about-section">
+
+    <h2>About Us</h2>
+
+    <p>
+        Welcome to our HTML learning website!
+        We provide easy HTML lessons for beginners.
+    </p>
+
+</section>
+
+    
+
+    <!-- Section 9 -->
+    <h2>9. Image as a Link</h2>
+
+    <p>
+        We can make an image clickable by placing
+        the &lt;img&gt; tag inside an &lt;a&gt; tag.
+    </p>
+
+    <div class="code-example">
+<pre>
+&lt;a href="https://www.google.com"&gt;
+    &lt;img src="google.png"
+         alt="Google Logo"
+         width="150"&gt;
+&lt;/a&gt;
+</pre>
+    </div>
+
+    <p>
+        When someone clicks the image, the browser
+        opens the linked webpage.
+    </p>
+
+    <!-- Section 10 -->
+    <h2>10. Important HTML Link Attributes</h2>
+
+    <ul>
+        <li><strong>href:</strong> Specifies the link destination.</li>
+        <li><strong>target:</strong> Specifies where to open the link.</li>
+        <li><strong>title:</strong> Provides extra information about the link.</li>
+        <li><strong>rel:</strong> Defines the relationship between linked documents.</li>
+        <li><strong>download:</strong> Suggests downloading the linked file.</li>
+    </ul>
+
+    <!-- Practical Exercise -->
+    <h2>11. Practical Exercise</h2>
+
+    <p>
+        Now it is your turn! Create a webpage containing:
+    </p>
+
+    <ol>
+        <li>A link to Google.</li>
+        <li>A link to YouTube.</li>
+        <li>A link to Lesson 1.</li>
+        <li>An email link.</li>
+        <li>A link that opens in a new tab.</li>
+        <li>A link that jumps to a section on the same page.</li>
+    </ol>
+
+    <div class="note">
+        <strong>Challenge:</strong>
+        Create a small webpage with five different links
+        and give each link a different purpose.
+    </div>
+
+    <!-- Quiz -->
+    <h2>12. Lesson Quiz</h2>
+
+    <div class="quiz-box">
+
+        <form id="quizForm">
+
+            <p><strong>Q1. Which HTML tag creates a link?</strong></p>
+
+            <label><input type="radio" name="q1" value="a"> &lt;p&gt;</label><br>
+            <label><input type="radio" name="q1" value="b"> &lt;a&gt;</label><br>
+            <label><input type="radio" name="q1" value="c"> &lt;h1&gt;</label>
+
+            <p><strong>Q2. Which attribute specifies the link destination?</strong></p>
+
+            <label><input type="radio" name="q2" value="a"> src</label><br>
+            <label><input type="radio" name="q2" value="b"> alt</label><br>
+            <label><input type="radio" name="q2" value="c"> href</label>
+
+            <p><strong>Q3. Which value opens a link in a new tab?</strong></p>
+
+            <label><input type="radio" name="q3" value="a"> _blank</label><br>
+            <label><input type="radio" name="q3" value="b"> _self</label><br>
+            <label><input type="radio" name="q3" value="c"> _parent</label>
+
+            <p><strong>Q4. Which link is used to send an email?</strong></p>
+
+            <label><input type="radio" name="q4" value="a"> https:</label><br>
+            <label><input type="radio" name="q4" value="b"> mailto:</label><br>
+            <label><input type="radio" name="q4" value="c"> file:</label>
+
+            <p><strong>Q5. Which attribute is used to jump to a section by its id?</strong></p>
+
+            <label><input type="radio" name="q5" value="a"> class</label><br>
+            <label><input type="radio" name="q5" value="b"> src</label><br>
+            <label><input type="radio" name="q5" value="c"> href</label>
+
+            <br><br>
+
+            <button type="button" onclick="checkQuiz()">
+                Submit Quiz
+            </button>
+
+            <h3 id="quizResult"></h3>
+
+        </form>
+    </div>
+
+    <!-- Conclusion -->
+    <h2>13. Conclusion</h2>
+
+    <p>
+        Congratulations! You have completed Lesson 6.
+        Now you know how to create internal links,
+        external links, email links, and links that
+        open in new tabs.
+    </p>
+
+    <p>
+        Keep practising and continue learning HTML
+        to become a better web developer!
+    </p>
+
+    <div class="lesson-navigation">
+        <a href="Lesson5.html">← Previous Lesson</a>
+        <a href="index.html">Home</a>
+        <a href="Lesson7.html">Next Lesson →</a>
+    </div>
+
+</div>
+
+<script>
+function checkQuiz() {
+
+    const answers = {
+        q1: "b",
+        q2: "c",
+        q3: "a",
+        q4: "b",
+        q5: "c"
+    };
+
+    let score = 0;
+
+    for (let question in answers) {
+
+        const selected = document.querySelector(
+            'input[name="' + question + '"]:checked'
+        );
+
+        if (selected && selected.value === answers[question]) {
+            score++;
+        }
+    }
+
+    document.getElementById("quizResult").textContent =
+        "Your Score: " + score + " / 5";
+}
+</script>
+
+</body>
+</html>

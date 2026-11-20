@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    
+<nav class="navbar">
+    <div class="nav-logo">HTML Course</div>
+
+    <button class="menu-toggle"
+            onclick="toggleMenu()"
+            aria-label="Open navigation menu"
+            aria-expanded="false">
+        ☰
+    </button>
+
+    <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="Lesson1.html" class="active">Lesson 1</a>
+        <a href="Lesson2.html">Lesson 2</a>
+        <a href="Lesson3.html">Lesson 3</a>
+        <a href="Lesson4.html">Lesson 4</a>
+        <a href="Lesson5.html">Lesson 5</a>
+        <a href="Lesson6.html">Lesson 6</a>
+        <a href="Lesson7.html">Lesson 7</a>
+        <a href="Lesson8.html">Lesson 8</a>
+        <a href="Lesson9.html">Lesson 9</a>
+        <a href="Lesson10.html">Lesson 10</a>
+    </div>
+</nav>
+
+<script>
+function toggleMenu() {
+    const menu = document.getElementById("navLinks");
+    const button = document.querySelector(".menu-toggle");
+
+    menu.classList.toggle("show");
+
+    button.setAttribute(
+        "aria-expanded",
+        menu.classList.contains("show")
+    );
+}
+</script>
+
+
+    <body>
+
+        <!-- Your website content here -->
+
+    </body>
+
+</html>
+<h2 style="text-align: center;">Getting started with Hyper Text Markup Language (HTML)</h2>
+<p>HTML is the standard language used to create web pages. It is called markup because the data of a web page is
+    marked with tags. Tags are used for giving heading, making tables, giving colors etc.</p>
+<p>There are two important terms that are needed to be understand in the context of HTML:</p>
+<ol>
+    <li>Hyper Text</li>
+    <li>Markup Language</li>
+</ol>
+<h3>Hyper Text</h3>
+<p>The term Hyper text is used due to the special text in a web page called hyperlinks. By clicking on these
+    links
+    one can move from one web page to another. Hyper Links are used to navigate on the World Wide Web (WWW).</p>
+<h3>Markup Language</h3>
+<p>A web page consists of a series of elements which are represented by tags. For example, a paragraph of a text
+    is
+    needed on web page, it is used as:</p>
+<div style="display: flex; justify-content: center;">
+    <img src="Image 1.png" alt="Image 1">
+</div>
+<p>Here &lt;p&gt; shows the marking of paragraph opening and &lt;/p&gt; means marking of paragraph closing tag.
+    Due
+    to marking of each element, it is called a markup language.</p>
+<p>The latest version of HTML is 5 and it was released on 28th October 2014. HTML 5 was developed by W3C, i.e.,
+    World Wide Web Consortium</p>
+<a href="https://www.w3.org/TR/html5/" target="_blank">Click here to visit World Wide Web Consortium</a>
+<h3 style="text-align: center;">Setting up a Development Environment</h3>
+<p>To start creating websites, you need a few basic tools and environments: </p>
+<ul>
+    <li>Text Editor: This is where you write your HTML code. Popular text editors include Notepad++, Sublime
+        Text
+        and Visual Studio Code.</li>
+    <li>Web Browser: You will use this to view and test your HTML files. Common web browsers are Google Chrome,
+        Mozilla Firefox and Microsoft Edge.</li>
+</ul>
+<!-- LESSON NAVIGATION -->
+
+<div class="lesson-navigation">
+
+    <a href="index.html">
+        Home
+    </a>
+
+    <a href="Lesson2.html">
+        Next Lesson →
+    </a>
+
+</div>
+</body>
+
+</html>

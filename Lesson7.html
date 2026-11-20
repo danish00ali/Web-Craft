@@ -1,0 +1,468 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 7: HTML Images</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .lesson-content {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .lesson-content h1 {
+            color: #1e3a8a;
+            text-align: center;
+            font-size: 36px;
+        }
+
+        .lesson-content h2 {
+            color: #2563eb;
+            border-bottom: 2px solid #dbeafe;
+            padding-bottom: 10px;
+            margin-top: 35px;
+        }
+
+        .lesson-content p,
+        .lesson-content li {
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .code-example {
+            background: #0f172a;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 10px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+
+        .note {
+            background: #eff6ff;
+            border-left: 5px solid #2563eb;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .image-example {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 20px auto;
+            border-radius: 12px;
+        }
+
+        .quiz-box {
+            background: #f1f5f9;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 25px;
+        }
+
+        .quiz-box label {
+            display: inline-block;
+            margin: 6px 0;
+        }
+
+        .quiz-box button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .quiz-box button:hover {
+            background: #1d4ed8;
+        }
+
+        .lesson-navigation {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            margin-top: 35px;
+        }
+
+        .lesson-navigation a {
+            background: #2563eb;
+            color: white;
+            padding: 12px 22px;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+
+        .lesson-navigation a:hover {
+            background: #1d4ed8;
+        }
+
+        @media(max-width: 600px) {
+            .lesson-content {
+                margin: 15px;
+                padding: 18px;
+            }
+
+            .lesson-content h1 {
+                font-size: 27px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar">
+    <div class="nav-logo">HTML Course</div>
+
+    <button class="menu-toggle"
+            onclick="toggleMenu()"
+            aria-label="Open navigation menu"
+            aria-expanded="false">
+        ☰
+    </button>
+
+    <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="Lesson1.html">Lesson 1</a>
+        <a href="Lesson2.html">Lesson 2</a>
+        <a href="Lesson3.html">Lesson 3</a>
+        <a href="Lesson4.html">Lesson 4</a>
+        <a href="Lesson5.html">Lesson 5</a>
+        <a href="Lesson6.html">Lesson 6</a>
+        <a href="Lesson7.html" class="active">Lesson 7</a>
+        <a href="Lesson8.html">Lesson 8</a>
+        <a href="Lesson9.html">Lesson 9</a>
+        <a href="Lesson10.html">Lesson 10</a>
+    </div>
+</nav>
+
+<div class="lesson-content">
+
+    <h1>Lesson 7: HTML Images</h1>
+
+    <p>
+        Welcome to Lesson 7! In this lesson, we will learn
+        how to add images to webpages using HTML.
+        Images make websites more attractive and informative.
+    </p>
+
+    <!-- Section 1 -->
+    <h2>1. What are HTML Images?</h2>
+
+    <p>
+        HTML Images are pictures displayed on a webpage.
+        We use the &lt;img&gt; tag to add images to a website.
+        The img tag is an empty element, which means it
+        does not need a closing tag.
+    </p>
+
+    <!-- Section 2 -->
+    <h2>2. The HTML Image Tag</h2>
+
+    <p>
+        The &lt;img&gt; tag is used to display an image.
+        The src attribute specifies the location of the image.
+    </p>
+
+    <div class="code-example">
+<pre>
+&lt;img src="flower.jpg" alt="A beautiful flower"&gt;
+</pre>
+    </div>
+
+    <p>
+        In this example, flower.jpg is the image file
+        that the browser will display.
+    </p>
+
+    <!-- Section 3 -->
+    <h2>3. Understanding the src Attribute</h2>
+
+    <p>
+        The src attribute stands for Source.
+        It tells the browser where to find the image.
+    </p>
+
+    <div class="code-example">
+<pre>
+&lt;img src="images/nature.jpg" alt="Beautiful nature"&gt;
+</pre>
+    </div>
+
+    <div class="note">
+        <strong>Remember:</strong>
+        The image path must be correct.
+        Otherwise, the browser will not display the image.
+    </div>
+
+    <!-- Section 4 -->
+    <h2>4. The alt Attribute</h2>
+
+    <p>
+        The alt attribute provides alternative text
+        for an image. It is useful when an image cannot load
+        and for people using screen readers.
+    </p>
+
+    <div class="code-example">
+<pre>
+&lt;img src="cat.jpg" alt="A cute cat"&gt;
+</pre>
+    </div>
+
+    <div class="note">
+        <strong>Important:</strong>
+        Always write meaningful alt text for informative images.
+    </div>
+
+    <!-- Section 5 -->
+    <h2>5. Changing Image Width and Height</h2>
+
+    <p>
+        We can change the width and height of an image
+        using the width and height attributes.
+    </p>
+
+    <div class="code-example">
+<pre>
+&lt;img src="flower.jpg"
+     alt="Flower"
+     width="300"
+     height="200"&gt;
+</pre>
+    </div>
+
+    <p>
+        The width controls the image's width,
+        while the height controls its height.
+    </p>
+
+    <!-- Section 6 -->
+    <h2>6. Adding Images from Another Folder</h2>
+
+    <p>
+        Images can also be stored inside a separate folder.
+        We need to write the correct folder path in src.
+    </p>
+
+    <div class="code-example">
+<pre>
+&lt;img src="images/sunset.jpg" alt="Sunset"&gt;
+</pre>
+    </div>
+
+    <p>
+        In this example, the image is stored inside
+        a folder named images.
+    </p>
+
+    <!-- Section 7 -->
+    <h2>7. Images from the Internet</h2>
+
+    <p>
+        We can also display an image using its online URL.
+    </p>
+
+    <div class="code-example">
+<pre>
+&lt;img src="https://example.com/flower.jpg"
+     alt="A flower"&gt;
+</pre>
+    </div>
+
+    <div class="note">
+        <strong>Remember:</strong>
+        An online image must have a valid and accessible image URL.
+    </div>
+
+    <!-- Section 8 -->
+    <h2>8. Making an Image Clickable</h2>
+
+    <p>
+        We can make an image clickable by placing
+        the img tag inside an anchor tag.
+    </p>
+
+    <div class="code-example">
+<pre>
+&lt;a href="https://www.google.com"&gt;
+    &lt;img src="google.png"
+         alt="Google"
+         width="200"&gt;
+&lt;/a&gt;
+</pre>
+    </div>
+
+    <p>
+        When someone clicks the image,
+        the browser opens the linked webpage.
+    </p>
+
+    <!-- Section 9 -->
+    <h2>9. Responsive Images using CSS</h2>
+
+    <p>
+        Responsive images automatically adjust to fit
+        different screen sizes.
+    </p>
+
+    <div class="code-example">
+<pre>
+&lt;img src="nature.jpg"
+     alt="Beautiful nature"
+     style="max-width:100%; height:auto;"&gt;
+</pre>
+    </div>
+
+    <div class="note">
+        <strong>Tip:</strong>
+        max-width: 100% prevents an image from becoming
+        wider than its container, while height: auto
+        preserves its proportions.
+    </div>
+
+    <!-- Section 10 -->
+    <h2>10. Important HTML Image Attributes</h2>
+
+    <ul>
+        <li><strong>src:</strong> Specifies the image location.</li>
+        <li><strong>alt:</strong> Provides alternative text.</li>
+        <li><strong>width:</strong> Sets the image width.</li>
+        <li><strong>height:</strong> Sets the image height.</li>
+        <li><strong>loading:</strong> Controls image loading behavior.</li>
+        <li><strong>title:</strong> Provides extra information.</li>
+    </ul>
+
+    <!-- Section 11 -->
+    <h2>11. Practical Exercise</h2>
+
+    <p>
+        Now it is your turn! Create a webpage containing:
+    </p>
+
+    <ol>
+        <li>Add a picture of a flower.</li>
+        <li>Add a picture of a cat.</li>
+        <li>Set the width and height of an image.</li>
+        <li>Write meaningful alt text.</li>
+        <li>Make an image clickable.</li>
+        <li>Create a responsive image using CSS.</li>
+    </ol>
+
+    <div class="note">
+        <strong>Challenge:</strong>
+        Create a small photo gallery containing
+        at least three images with suitable alt text.
+    </div>
+
+    <!-- Section 12 -->
+    <h2>12. Lesson Quiz</h2>
+
+    <div class="quiz-box">
+
+        <form id="quizForm">
+
+            <p><strong>Q1. Which tag is used to display an image?</strong></p>
+
+            <label><input type="radio" name="q1" value="a"> &lt;image&gt;</label><br>
+            <label><input type="radio" name="q1" value="b"> &lt;img&gt;</label><br>
+            <label><input type="radio" name="q1" value="c"> &lt;picturetext&gt;</label>
+
+            <p><strong>Q2. Which attribute specifies the image location?</strong></p>
+
+            <label><input type="radio" name="q2" value="a"> href</label><br>
+            <label><input type="radio" name="q2" value="b"> alt</label><br>
+            <label><input type="radio" name="q2" value="c"> src</label>
+
+            <p><strong>Q3. What does the alt attribute provide?</strong></p>
+
+            <label><input type="radio" name="q3" value="a"> Alternative text</label><br>
+            <label><input type="radio" name="q3" value="b"> Image width</label><br>
+            <label><input type="radio" name="q3" value="c"> Image color</label>
+
+            <p><strong>Q4. Which CSS property keeps image proportions automatically?</strong></p>
+
+            <label><input type="radio" name="q4" value="a"> height: auto</label><br>
+            <label><input type="radio" name="q4" value="b"> color: red</label><br>
+            <label><input type="radio" name="q4" value="c"> display: none</label>
+
+            <p><strong>Q5. Does the img tag need a closing tag?</strong></p>
+
+            <label><input type="radio" name="q5" value="a"> Yes</label><br>
+            <label><input type="radio" name="q5" value="b"> No</label><br>
+            <label><input type="radio" name="q5" value="c"> Sometimes always</label>
+
+            <br><br>
+
+            <button type="button" onclick="checkQuiz()">
+                Submit Quiz
+            </button>
+
+            <h3 id="quizResult"></h3>
+
+        </form>
+    </div>
+
+    <!-- Conclusion -->
+    <h2>13. Conclusion</h2>
+
+    <p>
+        Congratulations! You have completed Lesson 7.
+        Now you know how to add images, use image attributes,
+        resize images and create responsive images in HTML.
+    </p>
+
+    <p>
+        Keep practising and continue learning HTML
+        to become a better web developer!
+    </p>
+
+    <div class="lesson-navigation">
+        <a href="Lesson6.html">← Previous Lesson</a>
+        <a href="index.html">Home</a>
+        <a href="Lesson8.html">Next Lesson →</a>
+    </div>
+
+</div>
+
+<script>
+function checkQuiz() {
+
+    const answers = {
+        q1: "b",
+        q2: "c",
+        q3: "a",
+        q4: "a",
+        q5: "b"
+    };
+
+    let score = 0;
+
+    for (let question in answers) {
+
+        const selected = document.querySelector(
+            'input[name="' + question + '"]:checked'
+        );
+
+        if (selected && selected.value === answers[question]) {
+            score++;
+        }
+    }
+
+    document.getElementById("quizResult").textContent =
+        "Your Score: " + score + " / 5";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 5: HTML Lists</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .lesson-content {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .lesson-content h1 {
+            color: #1e3a8a;
+            text-align: center;
+        }
+
+        .lesson-content h2 {
+            color: #2563eb;
+            border-bottom: 2px solid #dbeafe;
+            padding-bottom: 8px;
+            margin-top: 35px;
+        }
+
+        .lesson-content p,
+        .lesson-content li {
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .code-example {
+            background: #0f172a;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 10px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+
+        .note {
+            background: #eff6ff;
+            border-left: 5px solid #2563eb;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .quiz-box {
+            background: #f1f5f9;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 25px;
+        }
+
+        .lesson-navigation {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            margin-top: 35px;
+        }
+
+        .lesson-navigation a {
+            background: #2563eb;
+            color: white;
+            padding: 12px 22px;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+
+        .lesson-navigation a:hover {
+            background: #1d4ed8;
+        }
+
+        @media(max-width: 600px) {
+            .lesson-content {
+                margin: 15px;
+                padding: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- یہاں اپنی پہلے سے موجود نیویگیشن بار شامل رکھیں -->
+
+    <nav class="navbar">
+        <div class="nav-logo">HTML Course</div>
+
+        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Open navigation menu" aria-expanded="false">
+            ☰
+        </button>
+
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="Lesson1.html">Lesson 1</a>
+            <a href="Lesson2.html">Lesson 2</a>
+            <a href="Lesson3.html">Lesson 3</a>
+            <a href="Lesson4.html">Lesson 4</a>
+            <a href="Lesson5.html" class="active">Lesson 5</a>
+            <a href="Lesson6.html">Lesson 6</a>
+            <a href="Lesson7.html">Lesson 7</a>
+            <a href="Lesson8.html">Lesson 8</a>
+            <a href="Lesson9.html">Lesson 9</ a>
+            <a href="Lesson10.html">Lesson 10</a>
+        </div>
+    </nav>
+
+
+
+    <div class="lesson-content">
+
+        <h1>Lesson 5: HTML Lists</h1>
+
+        <p>
+            Welcome to Lesson 5! In this lesson, we will learn about
+            HTML Lists. HTML Lists are used to display information
+            in an organized way on a webpage.
+        </p>
+
+        <h2>1. What are HTML Lists?</h2>
+
+        <p>
+            HTML Lists are used to group related items together.
+            They make information easier to read and understand.
+            HTML provides three main types of lists:
+        </p>
+
+        <ul>
+            <li>Ordered List</li>
+            <li>Unordered List</li>
+            <li>Description List</li>
+        </ul>
+
+        <h2>2. Ordered List (ol)</h2>
+
+        <p>
+            An Ordered List displays items in a numbered sequence.
+            It is created using the &lt;ol&gt; tag.
+            Each item is written inside an &lt;li&gt; tag.
+        </p>
+
+        <div class="code-example">
+            <pre>
+&lt;ol&gt;
+    &lt;li&gt;HTML&lt;/li&gt;
+    &lt;li&gt;CSS&lt;/li&gt;
+    &lt;li&gt;JavaScript&lt;/li&gt;
+&lt;/ol&gt;
+</pre>
+        </div>
+
+        <p><strong>Output:</strong></p>
+
+        <ol>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+        </ol>
+
+        <div class="note">
+            <strong>Remember:</strong>
+            The &lt;ol&gt; tag creates a numbered list,
+            while the &lt;li&gt; tag creates each list item.
+        </div>
+
+        <h2>3. Types of Ordered Lists</h2>
+
+        <p>
+            We can change the numbering style using the type attribute.
+        </p>
+
+        <div class="code-example">
+            <pre>
+&lt;ol type="A"&gt;
+    &lt;li&gt;Apple&lt;/li&gt;
+    &lt;li&gt;Banana&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ol type="a"&gt;
+    &lt;li&gt;Red&lt;/li&gt;
+    &lt;li&gt;Blue&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ol type="I"&gt;
+    &lt;li&gt;First&lt;/li&gt;
+    &lt;li&gt;Second&lt;/li&gt;
+&lt;/ol&gt;
+</pre>
+        </div>
+
+        <p><strong>Available types:</strong></p>
+
+        <ul>
+            <li>1: Numbers (1, 2, 3)</li>
+            <li>A: Capital letters (A, B, C)</li>
+            <li>a: Small letters (a, b, c)</li>
+            <li>I: Roman numbers (I, II, III)</li>
+            <li>i: Small Roman numbers (i, ii, iii)</li>
+        </ul>
+
+        <h2>4. Unordered List (ul)</h2>
+
+        <p>
+            An Unordered List displays items using bullet points
+            instead of numbers. It is created using the &lt;ul&gt; tag.
+        </p>
+
+        <div class="code-example">
+            <pre>
+&lt;ul&gt;
+    &lt;li&gt;Mango&lt;/li&gt;
+    &lt;li&gt;Orange&lt;/li&gt;
+    &lt;li&gt;Banana&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+        </div>
+
+        <p><strong>Output:</strong></p>
+
+        <ul>
+            <li>Mango</li>
+            <li>Orange</li>
+            <li>Banana</li>
+        </ul>
+
+        <h2>5. Types of Unordered Lists</h2>
+
+        <p>
+            The CSS list-style-type property can change bullet styles.
+        </p>
+
+        <div class="code-example">
+            <pre>
+&lt;ul style="list-style-type: disc;"&gt;
+    &lt;li&gt;Apple&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ul style="list-style-type: circle;"&gt;
+    &lt;li&gt;Mango&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ul style="list-style-type: square;"&gt;
+    &lt;li&gt;Orange&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ul style="list-style-type: none;"&gt;
+    &lt;li&gt;Banana&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+        </div>
+
+        <h2>6. Description List (dl)</h2>
+
+        <p>
+            A Description List is used to display a term
+            and its description.
+        </p>
+
+        <ul>
+            <li>&lt;dl&gt;: Creates a description list.</li>
+            <li>&lt;dt&gt;: Defines a term.</li>
+            <li>&lt;dd&gt;: Defines the description.</li>
+        </ul>
+
+        <div class="code-example">
+            <pre>
+&lt;dl&gt;
+    &lt;dt&gt;HTML&lt;/dt&gt;
+    &lt;dd&gt;HTML creates the structure of webpages.&lt;/dd&gt;
+
+    &lt;dt&gt;CSS&lt;/dt&gt;
+    &lt;dd&gt;CSS styles webpages.&lt;/dd&gt;
+&lt;/dl&gt;
+</pre>
+        </div>
+
+        <p><strong>Output:</strong></p>
+
+        <dl>
+            <dt><strong>HTML</strong></dt>
+            <dd>HTML creates the structure of webpages.</dd>
+
+            <dt><strong>CSS</strong></dt>
+            <dd>CSS styles webpages.</dd>
+        </dl>
+
+        <h2>7. Nested Lists</h2>
+
+        <p>
+            A Nested List is a list inside another list.
+            It is useful for displaying categories and subcategories.
+        </p>
+
+        <div class="code-example">
+            <pre>
+&lt;ul&gt;
+    &lt;li&gt;Programming
+        &lt;ul&gt;
+            &lt;li&gt;HTML&lt;/li&gt;
+            &lt;li&gt;CSS&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+
+    &lt;li&gt;Sports
+        &lt;ul&gt;
+            &lt;li&gt;Cricket&lt;/li&gt;
+            &lt;li&gt;Football&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+        </div>
+
+        <p><strong>Output:</strong></p>
+
+        <ul>
+            <li>Programming
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                </ul>
+            </li>
+            <li>Sports
+                <ul>
+                    <li>Cricket</li>
+                    <li>Football</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>8. Important HTML List Tags</h2>
+
+        <ul>
+            <li><strong>&lt;ol&gt;</strong> - Ordered List</li>
+            <li><strong>&lt;ul&gt;</strong> - Unordered List</li>
+            <li><strong>&lt;li&gt;</strong> - List Item</li>
+            <li><strong>&lt;dl&gt;</strong> - Description List</li>
+            <li><strong>&lt;dt&gt;</strong> - Description Term</li>
+            <li><strong>&lt;dd&gt;</strong> - Description Details</li>
+        </ul>
+
+        <h2>9. Practical Exercise</h2>
+
+        <p>
+            Now it is your turn! Create a webpage containing:
+        </p>
+
+        <ol>
+            <li>A numbered list of five subjects.</li>
+            <li>A bullet list of five fruits.</li>
+            <li>A description list of HTML and CSS.</li>
+            <li>A nested list of your favourite sports.</li>
+        </ol>
+
+        <div class="note">
+            <strong>Challenge:</strong>
+            Try to create all three types of HTML Lists
+            without looking at the examples above.
+        </div>
+
+        <h2>10. Lesson Quiz</h2>
+
+        <div class="quiz-box">
+
+            <form id="quizForm">
+
+                <p><strong>Q1. Which tag creates an Ordered List?</strong></p>
+                <label><input type="radio" name="q1" value="a"> &lt;ul&gt;</label><br>
+                <label><input type="radio" name="q1" value="b"> &lt;ol&gt;</label><br>
+                <label><input type="radio" name="q1" value="c"> &lt;li&gt;</label>
+
+                <p><strong>Q2. Which tag creates a list item?</strong></p>
+                <label><input type="radio" name="q2" value="a"> &lt;li&gt;</label><br>
+                <label><input type="radio" name="q2" value="b"> &lt;dl&gt;</label><br>
+                <label><input type="radio" name="q2" value="c"> &lt;dt&gt;</label>
+
+                <p><strong>Q3. Which tag creates a Description List?</strong></p>
+                <label><input type="radio" name="q3" value="a"> &lt;ol&gt;</label><br>
+                <label><input type="radio" name="q3" value="b"> &lt;ul&gt;</label><br>
+                <label><input type="radio" name="q3" value="c"> &lt;dl&gt;</label>
+
+                <p><strong>Q4. Which attribute changes bullet style using CSS?</strong></p>
+                <label><input type="radio" name="q4" value="a"> color</label><br>
+                <label><input type="radio" name="q4" value="b"> list-style-type</label><br>
+                <label><input type="radio" name="q4" value="c"> font-size</label>
+
+                <p><strong>Q5. What is a Nested List?</strong></p>
+                <label><input type="radio" name="q5" value="a"> A list inside another list</label><br>
+                <label><input type="radio" name="q5" value="b"> A heading</label><br>
+                <label><input type="radio" name="q5" value="c"> A paragraph</label>
+
+                <br><br>
+
+                <button type="button" onclick="checkQuiz()">
+                    Submit Quiz
+                </button>
+
+                <h3 id="quizResult"></h3>
+
+            </form>
+        </div>
+
+        <h2>Conclusion</h2>
+
+        <p>
+            Congratulations! You have completed Lesson 5.
+            Now you know how to create Ordered Lists,
+            Unordered Lists, Description Lists and Nested Lists.
+            Keep practising to improve your HTML skills.
+        </p>
+
+        <div class="lesson-navigation">
+            <a href="Lesson4.html">← Previous Lesson</a>
+            <a href="index.html">Home</a>
+            <a href="Lesson6.html">Next Lesson →</a>
+        </div>
+
+    </div>
+
+    <script>
+        function checkQuiz() {
+
+            const answers = {
+                q1: "b",
+                q2: "a",
+                q3: "c",
+                q4: "b",
+                q5: "a"
+            };
+
+            let score = 0;
+
+            for (let question in answers) {
+                const selected = document.querySelector(
+                    'input[name="' + question + '"]:checked'
+                );
+
+                if (selected && selected.value === answers[question]) {
+                    score++;
+                }
+            }
+
+            document.getElementById("quizResult").textContent =
+                "Your Score: " + score + " / 5";
+        }
+    </script>
+    <div class="lesson-navigation">
+
+</body>
+
+</html>

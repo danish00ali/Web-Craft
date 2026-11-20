@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="This is a basic HTML page that provides an overview of web development, including frontend, backend, and full stack development. It also introduces Hyper Text Markup Language (HTML) and its fundamental concepts.">
+    <title>Code Basics - HTML</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    
+<nav class="navbar">
+    <div class="nav-logo">HTML Course</div>
+
+    <button class="menu-toggle"
+            onclick="toggleMenu()"
+            aria-label="Open navigation menu"
+            aria-expanded="false">
+        ☰
+    </button>
+
+    <div class="nav-links" id="navLinks">
+        <a href="index.html" class="active">Home</a>
+        <a href="Lesson1.html">Lesson 1</a>
+        <a href="Lesson2.html">Lesson 2</a>
+        <a href="Lesson3.html">Lesson 3</a>
+        <a href="Lesson4.html">Lesson 4</a>
+        <a href="Lesson5.html">Lesson 5</a>
+        <a href="Lesson6.html">Lesson 6</a>
+        <a href="Lesson7.html">Lesson 7</a>
+        <a href="Lesson8.html">Lesson 8</a>
+        <a href="Lesson9.html">Lesson 9</a>
+        <a href="Lesson10.html">Lesson 10</a>
+    </div>
+</nav>
+
+<script>
+function toggleMenu() {
+    const menu = document.getElementById("navLinks");
+    const button = document.querySelector(".menu-toggle");
+
+    menu.classList.toggle("show");
+
+    button.setAttribute(
+        "aria-expanded",
+        menu.classList.contains("show")
+    );
+}
+</script>
+
+
+    <h1 style="text-align: center;">Web Development</h1>
+    <p>The process of creating websites and web applications is called web development. It means using various
+        programming languages and tools to design, build and maintain websites. The fundamentals of web development,
+        Hyper Text Markup Language (HTML), JavaScript and Cascading Style Sheet (CSS). Web development has three main
+        components.</p>
+    <ol>
+        <li>Frontend Development</li>
+        <p>This focuses on what users see and interact with on website. The following fundamentals are used to design
+            interactive Front-ends:</p>
+        <ul>
+            <li>HTML structures the content on the web pages, like headings, paragraphs, images and links.</li>
+            <li>CSS styles the content on web pages, like changing colors, fonts and layout to enhance the appearance.
+            </li>
+            <li>JavaScript adds interactivity to web pages, making them dynamic and engaging. It allows features such as
+                forms, animations and games.</li>
+        </ul>
+        <li>Backend Development</li>
+        <p>This manages the behind-the-scene functionality of a website, including servers, databases and application
+            logic.
+            Key back-end technologies are:</p>
+        <ul>
+            <li>Web Servers are commonly computers that store and deliver web pages to users when they enter a URL.</li>
+            <li>Databases stores and manages data like user information, product details and website content.</li>
+            <li>Back-end Programming languages like PHP, Python and Ruby handle tasks such as processing forms and
+                managing
+                user logins.</li>
+        </ul>
+        <li>Full Stack Development</li>
+    </ol>
+    <p>In the case of login systems, a full stack developer will create the User Interface (UI) for front-end and
+        handle
+        user authentication and database interaction for back-end. Full stack developers are highly demanded because
+        they can manage the all aspects of a web application, making them versatile and valuable in the tech
+        industry.
+    </p>
+</body>
+
+
+<h1 align="center">Complete HTML Course</h1>
+
+<section align="center" id="courses">
+
+    <h2>Start Your Web Development Journey</h2>
+
+    <!-- Lesson 1 -->
+    <section class="lesson-card">
+        <h2>Lesson 1: Introduction to HTML</h2>
+        <p>HTML is used to create the structure of a website.</p>
+        <a href="Lesson1.html" class="lesson-btn">
+            Start Learning HTML
+        </a>
+    </section>
+
+    <!-- Lesson 2 -->
+    <section class="lesson-card">
+        <h2>Lesson 2: HTML Tags</h2>
+        <p>HTML tags are used to define the structure and content of a web page.</p>
+        <a href="Lesson2.html" class="lesson-btn">
+            Start Learning HTML Tags
+        </a>
+    </section>
+
+    <!-- Lesson 3 -->
+    <section class="lesson-card">
+        <h2>Lesson 3: HTML Attributes</h2>
+        <p>HTML attributes provide additional information about HTML elements.</p>
+        <a href="Lesson3.html" class="lesson-btn">
+            Start Learning HTML Attributes
+        </a>
+    </section>
+
+    <!-- Lesson 4 -->
+    <section class="lesson-card">
+        <h2>Lesson 4: HTML Headings and Paragraphs</h2>
+        <p>HTML headings and paragraphs are used to structure the content of a website.</p>
+        <a href="Lesson4.html" class="lesson-btn">
+            Start Learning Headings and Paragraphs
+        </a>
+    </section>
+
+    <!-- Lesson 5 -->
+    <section class="lesson-card">
+        <h2>Lesson 5: HTML Lists</h2>
+        <p>Learn how to create ordered, unordered and nested lists in HTML.</p>
+        <a href="Lesson5.html" class="lesson-btn">
+            Start Learning HTML Lists
+        </a>
+    </section>
+
+    <!-- Lesson 6 -->
+    <section class="lesson-card">
+        <h2>Lesson 6: HTML Links</h2>
+        <p>Learn how to connect web pages using HTML hyperlinks.</p>
+        <a href="Lesson6.html" class="lesson-btn">
+            Start Learning HTML Links
+        </a>
+    </section>
+
+    <!-- Lesson 7 -->
+    <section class="lesson-card">
+        <h2>Lesson 7: HTML Images</h2>
+        <p>Learn how to add images to your website using HTML.</p>
+        <a href="Lesson7.html" class="lesson-btn">
+            Start Learning HTML Images
+        </a>
+    </section>
+
+    <!-- Lesson 8 -->
+    <section class="lesson-card">
+        <h2>Lesson 8: HTML Tables</h2>
+        <p>Learn how to organize information into rows and columns using tables.</p>
+        <a href="Lesson8.html" class="lesson-btn">
+            Start Learning HTML Tables
+        </a>
+    </section>
+
+    <!-- Lesson 9 -->
+    <section class="lesson-card">
+        <h2>Lesson 9: HTML Forms</h2>
+        <p>Learn how to create forms and collect information from users.</p>
+        <a href="Lesson9.html" class="lesson-btn">
+            Start Learning HTML Forms
+        </a>
+    </section>
+
+    <!-- Lesson 10 -->
+    <section class="lesson-card">
+        <h2>Lesson 10: HTML Multimedia</h2>
+        <p>Learn how to add audio and video to your website using HTML.</p>
+        <a href="Lesson10.html" class="lesson-btn">
+            Start Learning HTML Multimedia
+        </a>
+    </section>
+
+</section>
+
+    </body>
+
+</html>

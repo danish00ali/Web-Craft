@@ -1,0 +1,500 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lesson 4 - HTML Headings and Paragraphs</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* LESSON 4 HEADER */
+
+        .lesson4-header {
+            background: linear-gradient(135deg, #111827, #2563eb);
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+            margin: 0 0 0;
+        }
+
+        .lesson4-header h1 {
+            color: white;
+            font-size: 36px;
+            margin: 0 0 10px;
+        }
+
+        .lesson4-header p {
+            color: #dbeafe;
+            font-size: 17px;
+        }
+
+        /* SECTION NAVIGATION */
+
+        .section-nav {
+            background: #1e293b;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 10px;
+            margin-bottom: 25px;
+        }
+
+        .section-nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            padding: 8px 13px;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        .section-nav a:hover {
+            background: #2563eb;
+            color: white;
+        }
+
+        /* LESSON CONTAINER */
+
+        .lesson4-container {
+            max-width: 1050px;
+            margin: 25px auto;
+        }
+
+        .lesson4-box {
+            background: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+        }
+
+        .lesson4-box h2 {
+            color: #2563eb;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #dbeafe;
+            padding-bottom: 8px;
+        }
+
+        .lesson4-box h3 {
+            color: #0f766e;
+            margin: 15px 0 8px;
+        }
+
+        .lesson4-box p {
+            line-height: 1.8;
+            margin: 12px 0;
+        }
+
+        /* CODE EXAMPLES */
+
+        .example {
+            background: #111827;
+            color: #a7f3d0;
+            padding: 18px;
+            border-radius: 8px;
+            margin-top: 12px;
+            overflow-x: auto;
+        }
+
+        .example pre {
+            white-space: pre-wrap;
+            overflow-wrap: anywhere;
+        }
+
+        /* IMPORTANT NOTE */
+
+        .note {
+            background: #eff6ff;
+            border-left: 5px solid #2563eb;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 5px;
+        }
+
+        /* FOOTER */
+
+        .lesson4-footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 22px;
+            margin-top: 40px;
+        }
+
+        .lesson4-footer h3 {
+            color: white;
+        }
+
+        .lesson4-footer p {
+            color: #cbd5e1;
+        }
+
+        /* PREVIOUS AND NEXT BUTTONS */
+
+        .lesson4-navigation {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+            max-width: 1050px;
+            margin: 30px auto;
+        }
+
+        .lesson4-navigation a {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            padding: 12px 22px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .lesson4-navigation a:hover {
+            background: #172554;
+            transform: translateY(-2px);
+        }
+
+        /* MOBILE RESPONSIVE */
+
+        @media (max-width: 600px) {
+
+            .lesson4-header {
+                padding: 30px 12px;
+            }
+
+            .lesson4-header h1 {
+                font-size: 27px;
+            }
+
+            .lesson4-container {
+                width: 96%;
+            }
+
+            .lesson4-box {
+                padding: 17px;
+            }
+
+            .section-nav {
+                gap: 4px;
+            }
+
+            .section-nav a {
+                font-size: 12px;
+                padding: 7px 9px;
+            }
+
+            .lesson4-navigation {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- MAIN NAVIGATION BAR -->
+
+    <nav class="navbar">
+
+        <div class="nav-logo">HTML Course</div>
+
+        <button class="menu-toggle"
+            onclick="toggleMenu()"
+            aria-label="Open navigation menu"
+            aria-expanded="false">
+            ☰
+        </button>
+
+        <div class="nav-links" id="navLinks">
+
+            <a href="index.html">Home</a>
+            <a href="Lesson1.html">Lesson 1</a>
+            <a href="Lesson2.html">Lesson 2</a>
+            <a href="Lesson3.html">Lesson 3</a>
+            <a href="Lesson4.html" class="active">Lesson 4</a>
+            <a href="Lesson5.html">Lesson 5</a>
+            <a href="Lesson6.html">Lesson 6</a>
+            <a href="Lesson7.html">Lesson 7</a>
+            <a href="Lesson8.html">Lesson 8</a>
+            <a href="Lesson9.html">Lesson 9</a>
+            <a href="Lesson10.html">Lesson 10</a>
+
+        </div>
+    </nav>
+
+    <!-- LESSON HEADER -->
+
+    <header class="lesson4-header">
+
+        <h1>HTML Headings and Paragraphs</h1>
+
+        <p>Learn HTML Step by Step - Lesson 4</p>
+
+    </header>
+
+    <!-- SECTION NAVIGATION -->
+
+    <nav class="section-nav">
+
+        <a href="#introduction">Introduction</a>
+        <a href="#headings">Headings</a>
+        <a href="#paragraphs">Paragraphs</a>
+        <a href="#examples">Examples</a>
+
+    </nav>
+
+    <main class="lesson4-container">
+
+        <!-- INTRODUCTION -->
+
+        <section class="lesson4-box" id="introduction">
+
+            <h2>1. Introduction</h2>
+
+            <p>
+                HTML stands for HyperText Markup Language.
+                It is used to create the structure of web pages.
+                Headings and paragraphs are important elements
+                of every HTML website.
+            </p>
+
+            <p>
+                Headings are used for titles and subtitles,
+                while paragraphs are used to write text and
+                information on a webpage.
+            </p>
+
+        </section>
+
+        <!-- HTML HEADINGS -->
+
+        <section class="lesson4-box" id="headings">
+
+            <h2>2. What are HTML Headings?</h2>
+
+            <p>
+                HTML provides six different heading tags.
+                These headings are used to organize content
+                on a webpage.
+            </p>
+
+            <h3>HTML has six heading tags:</h3>
+
+            <div class="example">
+                <pre>
+&lt;h1&gt;This is Heading 1&lt;/h1&gt;
+
+&lt;h2&gt;This is Heading 2&lt;/h2&gt;
+
+&lt;h3&gt;This is Heading 3&lt;/h3&gt;
+
+&lt;h4&gt;This is Heading 4&lt;/h4&gt;
+
+&lt;h5&gt;This is Heading 5&lt;/h5&gt;
+
+&lt;h6&gt;This is Heading 6&lt;/h6&gt;
+                </pre>
+            </div>
+
+            <h3>Heading Examples:</h3>
+
+            <h1>Heading 1</h1>
+            <h2>Heading 2</h2>
+            <h3>Heading 3</h3>
+            <h4>Heading 4</h4>
+            <h5>Heading 5</h5>
+            <h6>Heading 6</h6>
+
+            <div class="note">
+
+                <strong>Important Note:</strong>
+
+                HTML has six heading levels.
+                H1 is the highest-level heading,
+                while H6 is the lowest-level heading.
+
+            </div>
+
+        </section>
+
+        <!-- HTML PARAGRAPHS -->
+
+        <section class="lesson4-box" id="paragraphs">
+
+            <h2>3. What are HTML Paragraphs?</h2>
+
+            <p>
+                The HTML paragraph tag is used to write
+                text on a webpage. The paragraph tag is
+                written as &lt;p&gt;.
+            </p>
+
+            <h3>Paragraph Syntax:</h3>
+
+            <div class="example">
+                <pre>
+&lt;p&gt;This is my first paragraph.&lt;/p&gt;
+
+&lt;p&gt;This is my second paragraph.&lt;/p&gt;
+                </pre>
+            </div>
+
+            <h3>Paragraph Output:</h3>
+
+            <p>This is my first paragraph.</p>
+
+            <p>
+                HTML is an easy language to learn.
+                We can create beautiful websites using HTML.
+            </p>
+
+        </section>
+
+        <!-- COMPLETE EXAMPLE -->
+
+        <section class="lesson4-box" id="examples">
+
+            <h2>4. Complete HTML Example</h2>
+
+            <p>
+                Here is a complete example of HTML headings
+                and paragraphs in one webpage.
+            </p>
+
+            <div class="example">
+                <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;title&gt;My First Webpage&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;h1&gt;Welcome to My Website&lt;/h1&gt;
+
+    &lt;h2&gt;About Me&lt;/h2&gt;
+
+    &lt;p&gt;
+        My name is Danish.
+        I am learning HTML.
+    &lt;/p&gt;
+
+    &lt;h2&gt;My Education&lt;/h2&gt;
+
+    &lt;p&gt;
+        I want to become a web developer.
+    &lt;/p&gt;
+
+    &lt;h3&gt;Thank You!&lt;/h3&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+                </pre>
+            </div>
+
+        </section>
+
+        <!-- IMPORTANT POINTS -->
+
+        <section class="lesson4-box">
+
+            <h2>5. Important Points to Remember</h2>
+
+            <p>1. HTML has six heading tags: H1 to H6.</p>
+            <p>2. H1 is the highest-level heading.</p>
+            <p>3. H6 is the lowest-level heading.</p>
+            <p>4. The paragraph tag is written as &lt;p&gt;.</p>
+            <p>5. Headings are used for titles and subtitles.</p>
+            <p>6. Paragraphs are used to write information.</p>
+
+        </section>
+
+        <!-- PRACTICE -->
+
+        <section class="lesson4-box">
+
+            <h2>6. Practice Task</h2>
+
+            <p>Now it is your turn to practice HTML!</p>
+
+            <h3>Your Task:</h3>
+
+            <p>1. Create a heading using H1.</p>
+            <p>2. Create a subheading using H2.</p>
+            <p>3. Write two paragraphs using P tags.</p>
+            <p>4. Create headings from H1 to H6.</p>
+
+            <div class="note">
+
+                <strong>Challenge:</strong>
+
+                Create a webpage about yourself using
+                HTML headings and paragraphs.
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer class="lesson4-footer">
+
+        <h3>HTML Learning Course</h3>
+
+        <p>Lesson 4 - Headings and Paragraphs</p>
+
+        <p>Keep Learning, Keep Growing!</p>
+
+    </footer>
+
+    <!-- LESSON NAVIGATION -->
+
+    <div class="lesson4-navigation">
+
+        <a href="Lesson3.html">
+            ← Previous Lesson
+        </a>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="Lesson5.html">
+            Next Lesson →
+        </a>
+
+    </div>
+
+    <!-- MOBILE MENU SCRIPT -->
+
+    <script>
+        function toggleMenu() {
+
+            const menu = document.getElementById("navLinks");
+            const button = document.querySelector(".menu-toggle");
+
+            menu.classList.toggle("show");
+
+            button.setAttribute(
+                "aria-expanded",
+                menu.classList.contains("show")
+            );
+
+        }
+    </script>
+
+</body>
+</html>

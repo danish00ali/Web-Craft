@@ -1,0 +1,808 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lesson 9: HTML Forms</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        .lesson-content {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .lesson-content h1 {
+            color: #1e3a8a;
+            text-align: center;
+            font-size: 36px;
+        }
+
+        .lesson-content h2 {
+            color: #2563eb;
+            border-bottom: 2px solid #dbeafe;
+            padding-bottom: 10px;
+            margin-top: 35px;
+        }
+
+        .lesson-content p,
+        .lesson-content li {
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .code-example {
+            background: #0f172a;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 10px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+
+        .note {
+            background: #eff6ff;
+            border-left: 5px solid #2563eb;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .example-form {
+            background: #f8fafc;
+            padding: 25px;
+            border: 1px solid #cbd5e1;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+
+        .example-form label {
+            display: block;
+            font-weight: bold;
+            margin: 12px 0 6px;
+        }
+
+        .example-form input,
+        .example-form select,
+        .example-form textarea {
+            width: 100%;
+            padding: 11px;
+            border: 1px solid #cbd5e1;
+            border-radius: 7px;
+            box-sizing: border-box;
+            font-size: 15px;
+        }
+
+        .example-form input[type="radio"],
+        .example-form input[type="checkbox"] {
+            width: auto;
+            margin-right: 7px;
+        }
+
+        .example-form button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 12px 22px;
+            border-radius: 7px;
+            cursor: pointer;
+            margin: 12px 5px 0 0;
+        }
+
+        .example-form button:hover {
+            background: #1d4ed8;
+        }
+
+        .quiz-box {
+            background: #f1f5f9;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 25px;
+        }
+
+        .quiz-box label {
+            display: inline-block;
+            margin: 6px 0;
+        }
+
+        .quiz-box button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .lesson-navigation {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            margin-top: 35px;
+        }
+
+        .lesson-navigation a {
+            background: #2563eb;
+            color: white;
+            padding: 12px 22px;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+
+        .lesson-navigation a:hover {
+            background: #1d4ed8;
+        }
+
+        @media(max-width: 600px) {
+            .lesson-content {
+                margin: 15px;
+                padding: 18px;
+            }
+
+            .lesson-content h1 {
+                font-size: 27px;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<!-- Navigation Bar -->
+
+<nav class="navbar">
+
+    <div class="nav-logo">HTML Course</div>
+
+    <button class="menu-toggle"
+            onclick="toggleMenu()"
+            aria-label="Open navigation menu"
+            aria-expanded="false">
+        ☰
+    </button>
+
+    <div class="nav-links" id="navLinks">
+
+        <a href="index.html">Home</a>
+        <a href="Lesson1.html">Lesson 1</a>
+        <a href="Lesson2.html">Lesson 2</a>
+        <a href="Lesson3.html">Lesson 3</a>
+        <a href="Lesson4.html">Lesson 4</a>
+        <a href="Lesson5.html">Lesson 5</a>
+        <a href="Lesson6.html">Lesson 6</a>
+        <a href="Lesson7.html">Lesson 7</a>
+        <a href="Lesson8.html">Lesson 8</a>
+        <a href="Lesson9.html" class="active">Lesson 9</a>
+        <a href="Lesson10.html">Lesson 10</a>
+
+    </div>
+
+</nav>
+
+
+<div class="lesson-content">
+
+    <h1>Lesson 9: HTML Forms</h1>
+
+    <p>
+        Welcome to Lesson 9! In this lesson, we will learn
+        how to create forms in HTML. Forms are used to collect
+        information from website visitors.
+    </p>
+
+
+    <!-- Section 1 -->
+
+    <h2>1. What are HTML Forms?</h2>
+
+    <p>
+        HTML Forms are used to collect information from users.
+        For example, registration forms, login forms,
+        contact forms and feedback forms.
+    </p>
+
+    <p>
+        Users can enter information into form fields
+        and submit it.
+    </p>
+
+
+    <!-- Section 2 -->
+
+    <h2>2. The HTML Form Tag</h2>
+
+    <p>
+        The &lt;form&gt; tag is used to create an HTML form.
+        Form elements are placed inside this tag.
+    </p>
+
+    <div class="code-example">
+<pre>
+&lt;form&gt;
+
+    &lt;label&gt;Name:&lt;/label&gt;
+
+    &lt;input type="text"&gt;
+
+    &lt;button type="submit"&gt;
+        Submit
+    &lt;/button&gt;
+
+&lt;/form&gt;
+</pre>
+    </div>
+
+
+    <!-- Section 3 -->
+
+    <h2>3. Text Input</h2>
+
+    <p>
+        The text input field allows users to enter
+        ordinary text, such as their name or city.
+    </p>
+
+    <div class="code-example">
+<pre>
+&lt;label for="name"&gt;Your Name:&lt;/label&gt;
+
+&lt;input type="text"
+       id="name"
+       name="name"&gt;
+</pre>
+    </div>
+
+    <p><strong>Example Output:</strong></p>
+
+    <div class="example-form">
+
+        <label for="demo-name">Your Name:</label>
+
+        <input type="text"
+               id="demo-name"
+               placeholder="Enter your name">
+
+    </div>
+
+
+    <!-- Section 4 -->
+
+    <h2>4. Password Input</h2>
+
+    <p>
+        The password input field is used to enter
+        passwords. Characters are usually hidden
+        while typing.
+    </p>
+
+    <div class="code-example">
+<pre>
+&lt;label for="password"&gt;Password:&lt;/label&gt;
+
+&lt;input type="password"
+       id="password"
+       name="password"&gt;
+</pre>
+    </div>
+
+    <div class="note">
+        <strong>Remember:</strong>
+        A password field hides the characters visually.
+        It does not encrypt or securely transmit the password
+        by itself.
+    </div>
+
+
+    <!-- Section 5 -->
+
+    <h2>5. Email Input</h2>
+
+    <p>
+        The email input is used to collect email addresses.
+        Browsers can check whether the entered value
+        has a valid email format.
+    </p>
+
+    <div class="code-example">
+<pre>
+&lt;label for="email"&gt;Email:&lt;/label&gt;
+
+&lt;input type="email"
+       id="email"
+       name="email"
+       placeholder="Enter your email"&gt;
+</pre>
+    </div>
+
+
+    <!-- Section 6 -->
+
+    <h2>6. Number Input</h2>
+
+    <p>
+        The number input allows users to enter numeric values.
+    </p>
+
+    <div class="code-example">
+<pre>
+&lt;label for="age"&gt;Age:&lt;/label&gt;
+
+&lt;input type="number"
+       id="age"
+       name="age"
+       min="1"
+       max="100"&gt;
+</pre>
+    </div>
+
+
+    <!-- Section 7 -->
+
+    <h2>7. Radio Buttons</h2>
+
+    <p>
+        Radio buttons allow users to select one option
+        from a group of choices.
+    </p>
+
+    <div class="code-example">
+<pre>
+&lt;p&gt;Choose your gender:&lt;/p&gt;
+
+&lt;input type="radio"
+       name="gender"
+       value="male"&gt;
+Male
+
+&lt;input type="radio"
+       name="gender"
+       value="female"&gt;
+Female
+</pre>
+    </div>
+
+    <p><strong>Example Output:</strong></p>
+
+    <div class="example-form">
+
+        <p>Choose your favourite subject:</p>
+
+        <label>
+            <input type="radio" name="subject" value="math">
+            Mathematics
+        </label>
+
+        <label>
+            <input type="radio" name="subject" value="science">
+            Science
+        </label>
+
+        <label>
+            <input type="radio" name="subject" value="english">
+            English
+        </label>
+
+    </div>
+
+
+    <!-- Section 8 -->
+
+    <h2>8. Checkboxes</h2>
+
+    <p>
+        Checkboxes allow users to select one or more
+        options from a list.
+    </p>
+
+    <div class="code-example">
+<pre>
+&lt;p&gt;Choose your hobbies:&lt;/p&gt;
+
+&lt;input type="checkbox"
+       name="hobby"
+       value="cricket"&gt;
+Cricket
+
+&lt;input type="checkbox"
+       name="hobby"
+       value="reading"&gt;
+Reading
+</pre>
+    </div>
+
+    <p><strong>Example Output:</strong></p>
+
+    <div class="example-form">
+
+        <p>Select your hobbies:</p>
+
+        <label>
+            <input type="checkbox" value="cricket">
+            Cricket
+        </label>
+
+        <label>
+            <input type="checkbox" value="reading">
+            Reading
+        </label>
+
+        <label>
+            <input type="checkbox" value="gaming">
+            Gaming
+        </label>
+
+    </div>
+
+
+    <!-- Section 9 -->
+
+    <h2>9. Dropdown Lists</h2>
+
+    <p>
+        A dropdown list allows users to select an option
+        from a list of choices.
+    </p>
+
+    <div class="code-example">
+<pre>
+&lt;label for="city"&gt;Choose a city:&lt;/label&gt;
+
+&lt;select id="city" name="city"&gt;
+
+    &lt;option value="multan"&gt;Multan&lt;/option&gt;
+    &lt;option value="lahore"&gt;Lahore&lt;/option&gt;
+    &lt;option value="karachi"&gt;Karachi&lt;/option&gt;
+
+&lt;/select&gt;
+</pre>
+    </div>
+
+    <p><strong>Example Output:</strong></p>
+
+    <div class="example-form">
+
+        <label for="demo-city">Choose a city:</label>
+
+        <select id="demo-city">
+            <option>Multan</option>
+            <option>Lahore</option>
+            <option>Karachi</option>
+            <option>Islamabad</option>
+        </select>
+
+    </div>
+
+
+    <!-- Section 10 -->
+
+    <h2>10. Textarea</h2>
+
+    <p>
+        The &lt;textarea&gt; tag creates a multi-line
+        text field. It is useful for messages,
+        comments and feedback.
+    </p>
+
+    <div class="code-example">
+<pre>
+&lt;label for="message"&gt;Your Message:&lt;/label&gt;
+
+&lt;textarea id="message"
+          name="message"
+          rows="5"
+          cols="30"&gt;
+&lt;/textarea&gt;
+</pre>
+    </div>
+
+
+    <!-- Section 11 -->
+
+    <h2>11. Submit and Reset Buttons</h2>
+
+    <p>
+        The Submit button sends form data to the destination
+        specified by the form.
+    </p>
+
+    <p>
+        The Reset button restores form fields to their
+        initial values.
+    </p>
+
+    <div class="code-example">
+<pre>
+&lt;button type="submit"&gt;
+    Submit Form
+&lt;/button&gt;
+
+&lt;button type="reset"&gt;
+    Reset Form
+&lt;/button&gt;
+</pre>
+    </div>
+
+
+    <!-- Section 12 -->
+
+    <h2>12. Important Form Attributes</h2>
+
+    <ul>
+        <li><strong>action:</strong> Specifies where form data is sent.</li>
+        <li><strong>method:</strong> Specifies how form data is sent.</li>
+        <li><strong>name:</strong> Identifies a form field.</li>
+        <li><strong>placeholder:</strong> Shows a helpful hint inside an input.</li>
+        <li><strong>required:</strong> Makes a field compulsory.</li>
+        <li><strong>value:</strong> Specifies an input's value.</li>
+        <li><strong>min and max:</strong> Set minimum and maximum values.</li>
+    </ul>
+
+    <div class="note">
+        <strong>Important:</strong>
+        HTML creates the form interface, but sending and
+        saving submitted information usually requires
+        a server or a suitable form service.
+    </div>
+
+
+    <!-- Section 13 -->
+
+    <h2>13. Complete Registration Form Example</h2>
+
+    <p>
+        Here is an example of a simple registration form
+        using different HTML form elements.
+    </p>
+
+    <div class="code-example">
+<pre>
+&lt;form&gt;
+
+    &lt;label for="student-name"&gt;Name:&lt;/label&gt;
+    &lt;input type="text"
+           id="student-name"
+           name="student-name"
+           required&gt;
+
+    &lt;label for="student-email"&gt;Email:&lt;/label&gt;
+    &lt;input type="email"
+           id="student-email"
+           name="email"
+           required&gt;
+
+    &lt;label for="student-age"&gt;Age:&lt;/label&gt;
+    &lt;input type="number"
+           id="student-age"
+           name="age"&gt;
+
+    &lt;label for="student-city"&gt;City:&lt;/label&gt;
+    &lt;select id="student-city" name="city"&gt;
+        &lt;option&gt;Multan&lt;/option&gt;
+        &lt;option&gt;Lahore&lt;/option&gt;
+    &lt;/select&gt;
+
+    &lt;button type="submit"&gt;
+        Register
+    &lt;/button&gt;
+
+&lt;/form&gt;
+</pre>
+    </div>
+
+    <p><strong>Live Example:</strong></p>
+
+    <div class="example-form">
+
+        <form onsubmit="showFormMessage(event)">
+
+            <label for="student-name-demo">Full Name:</label>
+            <input type="text"
+                   id="student-name-demo"
+                   placeholder="Enter your name"
+                   required>
+
+            <label for="student-email-demo">Email Address:</label>
+            <input type="email"
+                   id="student-email-demo"
+                   placeholder="Enter your email"
+                   required>
+
+            <label for="student-age-demo">Age:</label>
+            <input type="number"
+                   id="student-age-demo"
+                   min="1"
+                   max="100">
+
+            <label for="student-city-demo">City:</label>
+            <select id="student-city-demo">
+                <option>Multan</option>
+                <option>Lahore</option>
+                <option>Karachi</option>
+                <option>Islamabad</option>
+            </select>
+
+            <label for="student-message-demo">Message:</label>
+            <textarea id="student-message-demo"
+                      rows="4"
+                      placeholder="Write your message"></textarea>
+
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+
+            <p id="formMessage"></p>
+
+        </form>
+
+    </div>
+
+
+    <!-- Section 14 -->
+
+    <h2>14. Practical Exercise</h2>
+
+    <p>
+        Now it is your turn! Create a registration form
+        containing:
+    </p>
+
+    <ol>
+        <li>A name input field.</li>
+        <li>An email input field.</li>
+        <li>A password input field.</li>
+        <li>A number input field.</li>
+        <li>Radio buttons.</li>
+        <li>Checkboxes.</li>
+        <li>A dropdown list.</li>
+        <li>A message textarea.</li>
+        <li>A Submit button.</li>
+        <li>A Reset button.</li>
+    </ol>
+
+    <div class="note">
+        <strong>Challenge:</strong>
+        Create a complete student registration form
+        using all the HTML form elements you learned.
+    </div>
+
+
+    <!-- Section 15 -->
+
+    <h2>15. Lesson Quiz</h2>
+
+    <div class="quiz-box">
+
+        <form id="quizForm">
+
+            <p><strong>Q1. Which tag creates an HTML form?</strong></p>
+
+            <label><input type="radio" name="q1" value="a"> &lt;input&gt;</label><br>
+            <label><input type="radio" name="q1" value="b"> &lt;form&gt;</label><br>
+            <label><input type="radio" name="q1" value="c"> &lt;table&gt;</label>
+
+            <p><strong>Q2. Which input type hides password characters?</strong></p>
+
+            <label><input type="radio" name="q2" value="a"> text</label><br>
+            <label><input type="radio" name="q2" value="b"> email</label><br>
+            <label><input type="radio" name="q2" value="c"> password</label>
+
+            <p><strong>Q3. Which input allows multiple selections?</strong></p>
+
+            <label><input type="radio" name="q3" value="a"> checkbox</label><br>
+            <label><input type="radio" name="q3" value="b"> radio</label><br>
+            <label><input type="radio" name="q3" value="c"> submit</label>
+
+            <p><strong>Q4. Which tag creates a dropdown list?</strong></p>
+
+            <label><input type="radio" name="q4" value="a"> &lt;textarea&gt;</label><br>
+            <label><input type="radio" name="q4" value="b"> &lt;select&gt;</label><br>
+            <label><input type="radio" name="q4" value="c"> &lt;optionlist&gt;</label>
+
+            <p><strong>Q5. Which attribute makes an input compulsory?</strong></p>
+
+            <label><input type="radio" name="q5" value="a"> placeholder</label><br>
+            <label><input type="radio" name="q5" value="b"> value</label><br>
+            <label><input type="radio" name="q5" value="c"> required</label>
+
+            <br><br>
+
+            <button type="button" onclick="checkQuiz()">
+                Submit Quiz
+            </button>
+
+            <h3 id="quizResult"></h3>
+
+        </form>
+
+    </div>
+
+
+    <!-- Conclusion -->
+
+    <h2>16. Conclusion</h2>
+
+    <p>
+        Congratulations! You have completed Lesson 9.
+        Now you know how to create HTML forms and use
+        different input fields, radio buttons, checkboxes,
+        dropdown lists and textareas.
+    </p>
+
+    <p>
+        Keep practising and continue learning HTML
+        to become a better web developer!
+    </p>
+
+
+    <!-- Lesson Navigation -->
+
+    <div class="lesson-navigation">
+
+        <a href="Lesson8.html">← Previous Lesson</a>
+
+        <a href="index.html">Home</a>
+
+        <a href="Lesson10.html">Next Lesson →</a>
+
+    </div>
+
+</div>
+
+
+<!-- JavaScript -->
+
+<script>
+
+function checkQuiz() {
+
+    const answers = {
+        q1: "b",
+        q2: "c",
+        q3: "a",
+        q4: "b",
+        q5: "c"
+    };
+
+    let score = 0;
+
+    for (let question in answers) {
+
+        const selected = document.querySelector(
+            'input[name="' + question + '"]:checked'
+        );
+
+        if (selected && selected.value === answers[question]) {
+            score++;
+        }
+
+    }
+
+    document.getElementById("quizResult").textContent =
+        "Your Score: " + score + " / 5";
+
+}
+
+
+function showFormMessage(event) {
+
+    event.preventDefault();
+
+    document.getElementById("formMessage").textContent =
+        "Demo form submitted successfully!";
+
+}
+
+</script>
+
+</body>
+</html>

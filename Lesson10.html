@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lesson 10: HTML Multimedia</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .lesson-content {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .lesson-content h1 {
+            color: #1e3a8a;
+            text-align: center;
+            font-size: 36px;
+        }
+
+        .lesson-content h2 {
+            color: #2563eb;
+            border-bottom: 2px solid #dbeafe;
+            padding-bottom: 10px;
+            margin-top: 35px;
+        }
+
+        .lesson-content p,
+        .lesson-content li {
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .code-example {
+            background: #0f172a;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 10px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+
+        .note {
+            background: #eff6ff;
+            border-left: 5px solid #2563eb;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .example-box {
+            background: #f8fafc;
+            padding: 20px;
+            border: 1px solid #cbd5e1;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+
+        .example-box img,
+        .example-box video {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .example-box audio {
+            max-width: 100%;
+        }
+
+        .quiz-box {
+            background: #f1f5f9;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 25px;
+        }
+
+        .quiz-box button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .lesson-navigation {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            margin-top: 35px;
+        }
+
+        .lesson-navigation a {
+            background: #2563eb;
+            color: white;
+            padding: 12px 22px;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+
+        .lesson-navigation a:hover {
+            background: #1d4ed8;
+        }
+
+        @media(max-width: 600px) {
+            .lesson-content {
+                margin: 15px;
+                padding: 18px;
+            }
+
+            .lesson-content h1 {
+                font-size: 27px;
+            }
+
+            .lesson-navigation {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+
+        <div class="nav-logo">HTML Course</div>
+
+        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Open navigation menu" aria-expanded="false">
+            ☰
+        </button>
+
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="Lesson1.html">Lesson 1</a>
+            <a href="Lesson2.html">Lesson 2</a>
+            <a href="Lesson3.html">Lesson 3</a>
+            <a href="Lesson4.html">Lesson 4</a>
+            <a href="Lesson5.html">Lesson 5</a>
+            <a href="Lesson6.html">Lesson 6</a>
+            <a href="Lesson7.html">Lesson 7</a>
+            <a href="Lesson8.html">Lesson 8</a>
+            <a href="Lesson9.html">Lesson 9</a>
+            <a href="Lesson10.html" class="active">Lesson 10</a>
+        </div>
+
+    </nav>
+
+    <div class="lesson-content">
+
+        <h1>Lesson 10: HTML Multimedia</h1>
+
+        <p>
+            Welcome to Lesson 10! In this lesson, we will learn
+            how to add images, audio, videos and other multimedia
+            elements to an HTML webpage.
+        </p>
+
+        <!-- Section 1 -->
+        <h2>1. What is HTML Multimedia?</h2>
+
+        <p>
+            HTML Multimedia means adding different types of media
+            to a website. These include images, audio, videos
+            and animations.
+        </p>
+
+        <ul>
+            <li>Images</li>
+            <li>Audio files</li>
+            <li>Video files</li>
+            <li>YouTube videos</li>
+        </ul>
+
+        <!-- Section 2 -->
+        <h2>2. Adding Images in HTML</h2>
+
+        <p>
+            The &lt;img&gt; tag is used to display images
+            on a webpage.
+        </p>
+
+        <div class="code-example">
+            <pre>
+&lt;img src="image.jpg"
+     alt="Beautiful Nature"
+     width="400"&gt;
+</pre>
+        </div>
+
+        <p><strong>Important Attributes:</strong></p>
+
+        <ul>
+            <li><strong>src:</strong> Specifies the image location.</li>
+            <li><strong>alt:</strong> Provides alternative text.</li>
+            <li><strong>width:</strong> Sets image width.</li>
+            <li><strong>height:</strong> Sets image height.</li>
+        </ul>
+
+        <p><strong>Example Output:</strong></p>
+
+
+        <div class="example-box">
+            <figure>
+                <img src="https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=700"
+                    alt="Beautiful waterfall surrounded by nature" width="400">
+
+                <figcaption>
+                    Beautiful Forest Waterfall
+                </figcaption>
+            </figure>
+        </div>
+
+
+        <!-- Section 3 -->
+        <h2>3. Adding Audio in HTML</h2>
+
+        <p>
+            The &lt;audio&gt; tag allows us to add sound
+            or music to a webpage.
+        </p>
+
+        <div class="code-example">
+            <pre>
+&lt;audio controls&gt;
+
+    &lt;source src="music.mp3"
+            type="audio/mpeg"&gt;
+
+    Your browser does not support audio.
+
+&lt;/audio&gt;
+</pre>
+        </div>
+
+        <p><strong>Audio Attributes:</strong></p>
+
+        <ul>
+            <li><strong>controls:</strong> Displays audio controls.</li>
+            <li><strong>autoplay:</strong> Starts audio automatically.</li>
+            <li><strong>loop:</strong> Plays audio repeatedly.</li>
+            <li><strong>muted:</strong> Starts audio muted.</li>
+        </ul>
+
+        <div class="example-box">
+            <p><strong>Example Audio Player:</strong></p>
+
+            <audio controls>
+                <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+                Your browser does not support audio.
+            </audio>
+        </div>
+
+        <!-- Section 4 -->
+        <h2>4. Adding Videos in HTML</h2>
+
+        <p>
+            The &lt;video&gt; tag is used to display video
+            files on a webpage.
+        </p>
+
+        <div class="code-example">
+            <pre>
+&lt;video width="500" controls&gt;
+
+    &lt;source src="video.mp4"
+            type="video/mp4"&gt;
+
+    Your browser does not support video.
+
+&lt;/video&gt;
+</pre>
+        </div>
+
+        <p><strong>Video Attributes:</strong></p>
+
+        <ul>
+            <li><strong>controls:</strong> Displays video controls.</li>
+            <li><strong>width:</strong> Sets video width.</li>
+            <li><strong>height:</strong> Sets video height.</li>
+            <li><strong>poster:</strong> Displays a preview image.</li>
+            <li><strong>loop:</strong> Repeats the video.</li>
+        </ul>
+
+        <div class="example-box">
+            <p><strong>Example Video Player:</strong></p>
+
+            <video width="500" controls>
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                Your browser does not support video.
+            </video>
+        </div>
+
+        <!-- Section 5 -->
+        <h2>5. Adding YouTube Videos</h2>
+
+        <p>
+            We can also display YouTube videos on our webpage
+            using the &lt;iframe&gt; tag.
+        </p>
+
+        <div class="code-example">
+            <pre>
+&lt;iframe
+    width="560"
+    height="315"
+    src="https://www.youtube.com/embed/VIDEO_ID"
+    title="YouTube Video"
+    allowfullscreen&gt;
+&lt;/iframe&gt;
+</pre>
+        </div>
+
+        <div class="note">
+            <strong>Remember:</strong>
+            Replace VIDEO_ID with the actual ID of the
+            YouTube video you want to display.
+        </div>
+
+        <!-- Section 6 -->
+        <h2>6. Understanding the iframe Tag</h2>
+
+        <p>
+            The &lt;iframe&gt; tag is used to display another
+            webpage or external content inside your webpage.
+        </p>
+
+        <div class="code-example">
+            <pre>
+&lt;iframe
+    src="https://example.com"
+    width="500"
+    height="300"
+    title="Example Website"&gt;
+&lt;/iframe&gt;
+</pre>
+        </div>
+
+        <p>
+            It can be used for maps, videos and other
+            supported external content.
+        </p>
+
+        <!-- Section 7 -->
+        <h2>7. Image Width and Height</h2>
+
+        <p>
+            We can change the size of an image using
+            width and height attributes.
+        </p>
+
+        <div class="code-example">
+            <pre>
+&lt;img src="photo.jpg"
+     width="300"
+     height="200"
+     alt="My Photo"&gt;
+</pre>
+        </div>
+
+        <div class="note">
+            <strong>Tip:</strong>
+            Keep the image's original proportions when resizing
+            to avoid stretching or distortion.
+        </div>
+
+        <!-- Section 8 -->
+        <h2>8. Supported Media Formats</h2>
+
+        <p>
+            HTML supports different audio and video formats.
+        </p>
+
+        <h3>Audio Formats</h3>
+        <ul>
+            <li>MP3</li>
+            <li>WAV</li>
+            <li>OGG</li>
+        </ul>
+
+        <h3>Video Formats</h3>
+        <ul>
+            <li>MP4</li>
+            <li>WebM</li>
+            <li>OGG</li>
+        </ul>
+
+        <!-- Section 9 -->
+        <h2>9. Adding Multiple Sources</h2>
+
+        <p>
+            We can provide multiple media sources so the browser
+            can choose a supported format.
+        </p>
+
+        <div class="code-example">
+            <pre>
+&lt;video controls width="400"&gt;
+
+    &lt;source src="video.mp4"
+            type="video/mp4"&gt;
+
+    &lt;source src="video.webm"
+            type="video/webm"&gt;
+
+    Your browser does not support video.
+
+&lt;/video&gt;
+</pre>
+        </div>
+
+        <!-- Section 10 -->
+        <h2>10. Figure and Figcaption</h2>
+
+        <p>
+            The &lt;figure&gt; tag groups media content,
+            while &lt;figcaption&gt; provides a caption.
+        </p>
+
+        <div class="code-example">
+            <pre>
+&lt;figure&gt;
+
+    &lt;img src="nature.jpg"
+         alt="Nature Image"
+         width="300"&gt;
+
+    &lt;figcaption&gt;
+        Beautiful Nature
+    &lt;/figcaption&gt;
+
+&lt;/figure&gt;
+</pre>
+        </div>
+
+
+
+
+        <div class="example-box">
+            <figure>
+                <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=700"
+                    alt="Beautiful lake surrounded by green mountains" width="400">
+
+                <figcaption>
+                    Beautiful Mountain Lake
+                </figcaption>
+            </figure>
+        </div>
+
+
+
+
+
+        <!-- Section 11 -->
+        <h2>11. Practical Exercise</h2>
+
+        <p>
+            Now it is your turn! Create a webpage containing:
+        </p>
+
+        <ol>
+            <li>One image.</li>
+            <li>One audio player.</li>
+            <li>One video player.</li>
+            <li>One YouTube video using iframe.</li>
+            <li>One figure with a caption.</li>
+        </ol>
+
+        <div class="note">
+            <strong>Challenge:</strong>
+            Create a multimedia webpage about your favourite
+            hobby using images, audio and videos.
+        </div>
+
+        <!-- Section 12 -->
+        <h2>12. Lesson Quiz</h2>
+
+        <div class="quiz-box">
+
+            <form id="quizForm">
+
+                <p><strong>Q1. Which tag displays an image?</strong></p>
+
+                <label><input type="radio" name="q1" value="a"> &lt;image&gt;</label><br>
+                <label><input type="radio" name="q1" value="b"> &lt;img&gt;</label><br>
+                <label><input type="radio" name="q1" value="c"> &lt;picturefile&gt;</label>
+
+                <p><strong>Q2. Which tag adds audio?</strong></p>
+
+                <label><input type="radio" name="q2" value="a"> &lt;sound&gt;</label><br>
+                <label><input type="radio" name="q2" value="b"> &lt;music&gt;</label><br>
+                <label><input type="radio" name="q2" value="c"> &lt;audio&gt;</label>
+
+                <p><strong>Q3. Which tag adds video?</strong></p>
+
+                <label><input type="radio" name="q3" value="a"> &lt;video&gt;</label><br>
+                <label><input type="radio" name="q3" value="b"> &lt;movie&gt;</label><br>
+                <label><input type="radio" name="q3" value="c"> &lt;media&gt;</label>
+
+                <p><strong>Q4. Which tag embeds YouTube videos?</strong></p>
+
+                <label><input type="radio" name="q4" value="a"> &lt;audio&gt;</label><br>
+                <label><input type="radio" name="q4" value="b"> &lt;iframe&gt;</label><br>
+                <label><input type="radio" name="q4" value="c"> &lt;img&gt;</label>
+
+                <p><strong>Q5. Which attribute displays media controls?</strong></p>
+
+                <label><input type="radio" name="q5" value="a"> controls</label><br>
+                <label><input type="radio" name="q5" value="b"> size</label><br>
+                <label><input type="radio" name="q5" value="c"> color</label>
+
+                <br><br>
+
+                <button type="button" onclick="checkQuiz()">
+                    Submit Quiz
+                </button>
+
+                <h3 id="quizResult"></h3>
+
+            </form>
+
+        </div>
+
+        <!-- Conclusion -->
+        <h2>13. Conclusion</h2>
+
+        <p>
+            Congratulations! You have completed Lesson 10.
+            Now you know how to add images, audio, videos,
+            YouTube videos and other multimedia elements
+            to an HTML webpage.
+        </p>
+
+        <p>
+            Keep practising and continue learning HTML
+            to become a better web developer!
+        </p>
+
+        <!-- Lesson Navigation -->
+        <div class="lesson-navigation">
+
+            <a href="Lesson9.html">← Previous Lesson</a>
+
+            <a href="index.html"> Home </a>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        function checkQuiz() {
+
+            const answers = {
+                q1: "b",
+                q2: "c",
+                q3: "a",
+                q4: "b",
+                q5: "a"
+            };
+
+            let score = 0;
+
+            for (let question in answers) {
+
+                const selected = document.querySelector(
+                    'input[name="' + question + '"]:checked'
+                );
+
+                if (selected && selected.value === answers[question]) {
+                    score++;
+                }
+
+            }
+
+            document.getElementById("quizResult").textContent =
+                "Your Score: " + score + " / 5";
+
+        }
+
+    </script>
+
+</body>
+
+</html>

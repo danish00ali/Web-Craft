@@ -1,0 +1,663 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lesson 8: HTML Tables</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        .lesson-content {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .lesson-content h1 {
+            color: #1e3a8a;
+            text-align: center;
+            font-size: 36px;
+        }
+
+        .lesson-content h2 {
+            color: #2563eb;
+            border-bottom: 2px solid #dbeafe;
+            padding-bottom: 10px;
+            margin-top: 35px;
+        }
+
+        .lesson-content p,
+        .lesson-content li {
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .code-example {
+            background: #0f172a;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 10px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+
+        .note {
+            background: #eff6ff;
+            border-left: 5px solid #2563eb;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .example-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .example-table th,
+        .example-table td {
+            border: 1px solid #cbd5e1;
+            padding: 12px;
+            text-align: center;
+        }
+
+        .example-table th {
+            background: #2563eb;
+            color: white;
+        }
+
+        .example-table tr:nth-child(even) {
+            background: #eff6ff;
+        }
+
+        .quiz-box {
+            background: #f1f5f9;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 25px;
+        }
+
+        .quiz-box label {
+            display: inline-block;
+            margin: 6px 0;
+        }
+
+        .quiz-box button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .quiz-box button:hover {
+            background: #1d4ed8;
+        }
+
+        .lesson-navigation {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            margin-top: 35px;
+        }
+
+        .lesson-navigation a {
+            background: #2563eb;
+            color: white;
+            padding: 12px 22px;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+
+        .lesson-navigation a:hover {
+            background: #1d4ed8;
+        }
+
+        @media(max-width: 600px) {
+
+            .lesson-content {
+                margin: 15px;
+                padding: 18px;
+            }
+
+            .lesson-content h1 {
+                font-size: 27px;
+            }
+
+            .example-table th,
+            .example-table td {
+                padding: 8px;
+                font-size: 14px;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<!-- Navigation Bar -->
+
+<nav class="navbar">
+
+    <div class="nav-logo">HTML Course</div>
+
+    <button class="menu-toggle"
+            onclick="toggleMenu()"
+            aria-label="Open navigation menu"
+            aria-expanded="false">
+        ☰
+    </button>
+
+    <div class="nav-links" id="navLinks">
+
+        <a href="index.html">Home</a>
+        <a href="Lesson1.html">Lesson 1</a>
+        <a href="Lesson2.html">Lesson 2</a>
+        <a href="Lesson3.html">Lesson 3</a>
+        <a href="Lesson4.html">Lesson 4</a>
+        <a href="Lesson5.html">Lesson 5</a>
+        <a href="Lesson6.html">Lesson 6</a>
+        <a href="Lesson7.html">Lesson 7</a>
+        <a href="Lesson8.html" class="active">Lesson 8</a>
+        <a href="Lesson9.html">Lesson 9</a>
+        <a href="Lesson10.html">Lesson 10</a>
+
+    </div>
+
+</nav>
+
+
+<div class="lesson-content">
+
+    <h1>Lesson 8: HTML Tables</h1>
+
+    <p>
+        Welcome to Lesson 8! In this lesson, we will learn
+        how to create tables in HTML. Tables are used to
+        organize information into rows and columns.
+    </p>
+
+
+    <!-- Section 1 -->
+
+    <h2>1. What are HTML Tables?</h2>
+
+    <p>
+        HTML Tables are used to display data in rows and
+        columns. They make information organized and
+        easier to understand.
+    </p>
+
+    <p>
+        For example, we can use tables to display student
+        names, marks, subjects and other information.
+    </p>
+
+
+    <!-- Section 2 -->
+
+    <h2>2. The HTML Table Tag</h2>
+
+    <p>
+        The &lt;table&gt; tag is used to create a table
+        in HTML.
+    </p>
+
+    <div class="code-example">
+<pre>
+&lt;table&gt;
+
+    &lt;tr&gt;
+        &lt;td&gt;Name&lt;/td&gt;
+        &lt;td&gt;Age&lt;/td&gt;
+    &lt;/tr&gt;
+
+&lt;/table&gt;
+</pre>
+    </div>
+
+
+    <!-- Section 3 -->
+
+    <h2>3. Understanding Table Tags</h2>
+
+    <ul>
+        <li><strong>&lt;table&gt;:</strong> Creates a table.</li>
+        <li><strong>&lt;tr&gt;:</strong> Creates a table row.</li>
+        <li><strong>&lt;td&gt;:</strong> Creates a table data cell.</li>
+        <li><strong>&lt;th&gt;:</strong> Creates a table heading cell.</li>
+        <li><strong>&lt;caption&gt;:</strong> Adds a table title.</li>
+    </ul>
+
+
+    <!-- Section 4 -->
+
+    <h2>4. Creating Your First Table</h2>
+
+    <p>
+        Let's create a simple table containing student
+        names and ages.
+    </p>
+
+    <div class="code-example">
+<pre>
+&lt;table border="1"&gt;
+
+    &lt;tr&gt;
+        &lt;th&gt;Name&lt;/th&gt;
+        &lt;th&gt;Age&lt;/th&gt;
+    &lt;/tr&gt;
+
+    &lt;tr&gt;
+        &lt;td&gt;Ali&lt;/td&gt;
+        &lt;td&gt;15&lt;/td&gt;
+    &lt;/tr&gt;
+
+    &lt;tr&gt;
+        &lt;td&gt;Danish&lt;/td&gt;
+        &lt;td&gt;16&lt;/td&gt;
+    &lt;/tr&gt;
+
+&lt;/table&gt;
+</pre>
+    </div>
+
+    <p><strong>Example Output:</strong></p>
+
+    <table class="example-table">
+
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+
+        <tr>
+            <td>Ali</td>
+            <td>15</td>
+        </tr>
+
+        <tr>
+            <td>Danish</td>
+            <td>16</td>
+        </tr>
+
+    </table>
+
+
+    <!-- Section 5 -->
+
+    <h2>5. Adding Table Headings</h2>
+
+    <p>
+        The &lt;th&gt; tag is used to create headings
+        inside a table. Browsers usually display table
+        headings in bold text.
+    </p>
+
+    <div class="code-example">
+<pre>
+&lt;table&gt;
+
+    &lt;tr&gt;
+        &lt;th&gt;Subject&lt;/th&gt;
+        &lt;th&gt;Marks&lt;/th&gt;
+    &lt;/tr&gt;
+
+&lt;/table&gt;
+</pre>
+    </div>
+
+
+    <!-- Section 6 -->
+
+    <h2>6. Adding Table Borders</h2>
+
+    <p>
+        We can use CSS to add borders around table cells.
+        The border property creates lines around cells.
+    </p>
+
+    <div class="code-example">
+<pre>
+&lt;style&gt;
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+&lt;/style&gt;
+</pre>
+    </div>
+
+    <div class="note">
+        <strong>Remember:</strong>
+        The border-collapse property combines adjacent
+        table borders into a single border.
+    </div>
+
+
+    <!-- Section 7 -->
+
+    <h2>7. Using Cell Padding</h2>
+
+    <p>
+        Cell padding creates space between the cell
+        content and its border.
+    </p>
+
+    <div class="code-example">
+<pre>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 15px;
+}
+</pre>
+    </div>
+
+
+    <!-- Section 8 -->
+
+    <h2>8. Using Colspan</h2>
+
+    <p>
+        The colspan attribute allows a table cell
+        to extend across multiple columns.
+    </p>
+
+    <div class="code-example">
+<pre>
+&lt;table border="1"&gt;
+
+    &lt;tr&gt;
+        &lt;th colspan="2"&gt;Student Information&lt;/th&gt;
+    &lt;/tr&gt;
+
+    &lt;tr&gt;
+        &lt;td&gt;Ali&lt;/td&gt;
+        &lt;td&gt;15&lt;/td&gt;
+    &lt;/tr&gt;
+
+&lt;/table&gt;
+</pre>
+    </div>
+
+    <p><strong>Example Output:</strong></p>
+
+    <table class="example-table">
+
+        <tr>
+            <th colspan="2">Student Information</th>
+        </tr>
+
+        <tr>
+            <td>Ali</td>
+            <td>15</td>
+        </tr>
+
+    </table>
+
+
+    <!-- Section 9 -->
+
+    <h2>9. Using Rowspan</h2>
+
+    <p>
+        The rowspan attribute allows a table cell
+        to extend across multiple rows.
+    </p>
+
+    <div class="code-example">
+<pre>
+&lt;table border="1"&gt;
+
+    &lt;tr&gt;
+        &lt;th&gt;Name&lt;/th&gt;
+        &lt;td rowspan="2"&gt;Ali&lt;/td&gt;
+    &lt;/tr&gt;
+
+    &lt;tr&gt;
+        &lt;th&gt;Student&lt;/th&gt;
+    &lt;/tr&gt;
+
+&lt;/table&gt;
+</pre>
+    </div>
+
+
+    <!-- Section 10 -->
+
+    <h2>10. Table Caption</h2>
+
+    <p>
+        The &lt;caption&gt; tag adds a title to a table.
+        It helps users understand what the table displays.
+    </p>
+
+    <div class="code-example">
+<pre>
+&lt;table border="1"&gt;
+
+    &lt;caption&gt;Student Marks&lt;/caption&gt;
+
+    &lt;tr&gt;
+        &lt;th&gt;Name&lt;/th&gt;
+        &lt;th&gt;Marks&lt;/th&gt;
+    &lt;/tr&gt;
+
+    &lt;tr&gt;
+        &lt;td&gt;Ali&lt;/td&gt;
+        &lt;td&gt;90&lt;/td&gt;
+    &lt;/tr&gt;
+
+&lt;/table&gt;
+</pre>
+    </div>
+
+
+    <!-- Section 11 -->
+
+    <h2>11. Table Sections</h2>
+
+    <p>
+        HTML provides three useful tags for organizing
+        table content:
+    </p>
+
+    <ul>
+        <li><strong>&lt;thead&gt;:</strong> Contains the table heading rows.</li>
+        <li><strong>&lt;tbody&gt;:</strong> Contains the main table data.</li>
+        <li><strong>&lt;tfoot&gt;:</strong> Contains summary or footer rows.</li>
+    </ul>
+
+    <div class="code-example">
+<pre>
+&lt;table border="1"&gt;
+
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Product&lt;/th&gt;
+            &lt;th&gt;Price&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Book&lt;/td&gt;
+            &lt;td&gt;500&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+
+    &lt;tfoot&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Total&lt;/td&gt;
+            &lt;td&gt;500&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tfoot&gt;
+
+&lt;/table&gt;
+</pre>
+    </div>
+
+
+    <!-- Section 12 -->
+
+    <h2>12. Practical Exercise</h2>
+
+    <p>
+        Now it is your turn! Create a webpage containing:
+    </p>
+
+    <ol>
+        <li>Create a table with three columns.</li>
+        <li>Add five student names.</li>
+        <li>Add their ages and marks.</li>
+        <li>Use table headings.</li>
+        <li>Add borders and cell padding.</li>
+        <li>Use colspan in a table.</li>
+        <li>Add a caption to your table.</li>
+    </ol>
+
+    <div class="note">
+        <strong>Challenge:</strong>
+        Create a student marksheet using HTML Tables.
+        Include student names, subjects and marks.
+    </div>
+
+
+    <!-- Section 13 -->
+
+    <h2>13. Lesson Quiz</h2>
+
+    <div class="quiz-box">
+
+        <form id="quizForm">
+
+            <p><strong>Q1. Which tag creates an HTML table?</strong></p>
+
+            <label><input type="radio" name="q1" value="a"> &lt;tr&gt;</label><br>
+            <label><input type="radio" name="q1" value="b"> &lt;table&gt;</label><br>
+            <label><input type="radio" name="q1" value="c"> &lt;td&gt;</label>
+
+            <p><strong>Q2. Which tag creates a table row?</strong></p>
+
+            <label><input type="radio" name="q2" value="a"> &lt;tr&gt;</label><br>
+            <label><input type="radio" name="q2" value="b"> &lt;th&gt;</label><br>
+            <label><input type="radio" name="q2" value="c"> &lt;table&gt;</label>
+
+            <p><strong>Q3. Which tag creates a table heading?</strong></p>
+
+            <label><input type="radio" name="q3" value="a"> &lt;td&gt;</label><br>
+            <label><input type="radio" name="q3" value="b"> &lt;th&gt;</label><br>
+            <label><input type="radio" name="q3" value="c"> &lt;tr&gt;</label>
+
+            <p><strong>Q4. Which attribute joins multiple columns?</strong></p>
+
+            <label><input type="radio" name="q4" value="a"> rowspan</label><br>
+            <label><input type="radio" name="q4" value="b"> width</label><br>
+            <label><input type="radio" name="q4" value="c"> colspan</label>
+
+            <p><strong>Q5. Which tag adds a title to a table?</strong></p>
+
+            <label><input type="radio" name="q5" value="a"> &lt;caption&gt;</label><br>
+            <label><input type="radio" name="q5" value="b"> &lt;title&gt;</label><br>
+            <label><input type="radio" name="q5" value="c"> &lt;heading&gt;</label>
+
+            <br><br>
+
+            <button type="button" onclick="checkQuiz()">
+                Submit Quiz
+            </button>
+
+            <h3 id="quizResult"></h3>
+
+        </form>
+
+    </div>
+
+
+    <!-- Conclusion -->
+
+    <h2>14. Conclusion</h2>
+
+    <p>
+        Congratulations! You have completed Lesson 8.
+        Now you know how to create HTML tables, add rows
+        and columns, use headings, add borders and combine
+        cells using colspan and rowspan.
+    </p>
+
+    <p>
+        Keep practising and continue learning HTML
+        to become a better web developer!
+    </p>
+
+
+    <!-- Lesson Navigation -->
+
+    <div class="lesson-navigation">
+
+        <a href="Lesson7.html">← Previous Lesson</a>
+
+        <a href="index.html">Home</a>
+
+        <a href="Lesson9.html">Next Lesson →</a>
+
+    </div>
+
+</div>
+
+
+<!-- Quiz JavaScript -->
+
+<script>
+
+function checkQuiz() {
+
+    const answers = {
+        q1: "b",
+        q2: "a",
+        q3: "b",
+        q4: "c",
+        q5: "a"
+    };
+
+    let score = 0;
+
+    for (let question in answers) {
+
+        const selected = document.querySelector(
+            'input[name="' + question + '"]:checked'
+        );
+
+        if (selected && selected.value === answers[question]) {
+            score++;
+        }
+
+    }
+
+    document.getElementById("quizResult").textContent =
+        "Your Score: " + score + " / 5";
+
+}
+
+</script>
+
+</body>
+</html>
